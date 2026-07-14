@@ -1,11 +1,13 @@
-# Website-Notizen (PoC)
+# Website-Notizen
 
-## Deployment aktivieren
-1. Branch in `main` mergen (der Workflow `deploy-pages.yml` triggert auf `main` + Änderungen unter `website/`).
-2. In GitHub: **Settings → Pages → Source: "GitHub Actions"** wählen (einmalig).
-3. Hinweis: Bei einem **privaten** Repo erfordert GitHub Pages einen Bezahl-Plan (Pro/Team).
-   Empfehlung mittelfristig: Website in ein eigenes **öffentliches** Repo auslagern
-   (dann ist Pages garantiert kostenlos und der Hermes-Vault bleibt strikt getrennt).
+## Deployment
+- Kanonisches Zuhause der Website ist das öffentliche Repo
+  **ManfredSchoch/Scrollytelling-MS**. Jeder Push auf dessen `main` deployed
+  automatisch auf GitHub Pages (Workflow `deploy-pages.yml`). Falls der erste Lauf an
+  der Pages-Aktivierung scheitert: einmalig **Settings → Pages → Source: "GitHub
+  Actions"** setzen und den Workflow erneut starten.
+- Das öffentliche Repo enthält NUR die Website. Forschungsnotizen/Vault bleiben im
+  privaten Hermes-Repo.
 
 ## Content-Workflow
 - **`content.md` ist die Single Source of Truth für alle Website-Texte.** Dort direkt
