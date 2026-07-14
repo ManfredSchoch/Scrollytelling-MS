@@ -44,7 +44,8 @@
 - Knowledge Nugget 03 verlinken, sobald online.
 - Vibe-Coding-Workshop: Termin/Raum "tba" — auf der Website bewusst ohne Termin.
 - Optional: eigener Domain-Name (CNAME-Datei + DNS).
-- Optional: OG-Preview-Bild (`og:image`) für LinkedIn-Shares — lohnt sich!
+- ~~OG-Preview-Bild~~: erledigt — `assets/og-image.png` (1200×630), generiert aus
+  `og-image.html`-Vorlage; bei Änderung neu rendern.
 
 ## Technik
 - Reines HTML/CSS/JS, keine Dependencies, kein Build-Schritt, keine externen Requests
