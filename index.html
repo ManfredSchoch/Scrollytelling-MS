@@ -77,6 +77,27 @@
       <strong>many people together</strong> make better judgments than any individual? For wicked problems —
       climate, health, the future of work — crowds can generate and evaluate solution ideas at scale.
       But collective intelligence needs careful design: incentives, aggregation, and process.</p>
+      <div class="dataviz reveal" aria-label="Key findings from Idea Evaluation with Crowds and LLMs">
+        <div class="dataviz__side">
+          <h3 class="dataviz__title">Same judges, different question</h3>
+          <p>Across four innovation contests of ascending specialization — from <em>attitudes &amp;
+          behaviors</em> to <em>energy supply</em> — we compared crowd judgments with an LLM evaluator.</p>
+          <p>Asked for <strong>absolute ratings</strong>, the LLM hovered at chance level. Asked for
+          <strong>computed rankings</strong>, it kept pace with the crowd — even in the most
+          specialized contest. How you ask matters more than what you ask about.</p>
+          <div class="dataviz__stat">
+            <span class="dataviz__num">50&nbsp;% → 80&nbsp;%</span>
+            <span class="dataviz__caption">LLM balanced accuracy: from chance level (absolute ratings) to crowd level (computed rankings)</span>
+          </div>
+        </div>
+        <figure class="dataviz__chart">
+          <svg id="contests-chart" viewBox="0 0 560 340" role="img"
+               aria-label="Two schematic line charts across four contests of ascending specialization: with absolute ratings, LLM accuracy stays flat at the 50 percent chance level while the crowd starts higher; with computed rankings, the LLM matches or exceeds the crowd at 69 to 80 percent"></svg>
+          <figcaption>Schematic recreation (balanced accuracy) based on Gimpel, Laubacher, Probost, Schäfer &amp;
+          Schoch (2025, <em>Group Decision and Negotiation</em>). Contests 1→4 in ascending specialization,
+          from attitudes &amp; behaviors to energy supply.</figcaption>
+        </figure>
+      </div>
       <blockquote class="pullquote reveal">
         <p>Crowds can evaluate ideas for problems that overwhelm any single expert — if the inner workings of the collective are managed well.</p>
       </blockquote>
@@ -200,7 +221,7 @@
         </article>
       </div>
 
-      <p class="chapter__outlook reveal"><strong>Currently under review:</strong> how to balance
+      <p class="chapter__outlook reveal"><strong>Current work:</strong> how to balance
       <em>human agency and system autonomy</em> when orchestrating multi-agent systems — the question that
       connects all three acts, and the one I care about most.</p>
     </div>
@@ -319,7 +340,6 @@
         <button class="pubs__filter" data-filter="journal">Journal articles</button>
         <button class="pubs__filter" data-filter="conference">Conference papers</button>
         <button class="pubs__filter" data-filter="whitepaper">Studies &amp; white papers</button>
-        <button class="pubs__filter" data-filter="wip">In progress</button>
       </div>
       <ol class="pubs__list reveal">
         <li data-type="journal">Olenberger, C., Schoch, M., &amp; Utz, L. (2026). The information processing of fake news: How intervention order influences perception over time. <em>Information &amp; Management, 63</em>(1). <a href="https://doi.org/10.1016/j.im.2025.104256">DOI</a></li>
@@ -352,11 +372,6 @@
         <li data-type="whitepaper">Lanzl, J., Schoch, M., Jung, C., &amp; Mayer, R. (2023). New Digital Work: Die Zukunft der Arbeit im digitalen Zeitalter. Fraunhofer FIT.</li>
         <li data-type="whitepaper">Gimpel, H., Hall, K., Decker, S., Eymann, T., Lämmermann, L., Mädche, A., Röglinger, M., Ruiner, C., Schoch, M., Schoop, M., Urbach, N., &amp; Vandirk, S. (2023). Unlocking the Power of Generative AI Models and Systems such as GPT-4 and ChatGPT for Higher Education. Universität Hohenheim.</li>
         <li data-type="whitepaper">Gimpel, H., Bayer, S., Lanzl, J., Regal, C., Schäfer, R., &amp; Schoch, M. (2020). Digitale Arbeit während der COVID-19-Pandemie. Fraunhofer FIT.</li>
-        <li data-type="wip">Orchestrating Generative AI-Based Multi-Agent Systems: Balancing Human Agency and System Autonomy (under review).</li>
-        <li data-type="wip">Emotional Trajectories during IT Events: How Challenge and Achievement Emotions Shape Adaptive IS Use Over Time (under review).</li>
-        <li data-type="wip">The Influence of Achievement-Signaling Gamification Elements on Technostress Appraisal Over Time (under review).</li>
-        <li data-type="wip">When Coping leads to Calling: Exploring the Path to Technical Support after Discrepant IT Events (under review).</li>
-        <li data-type="wip">Resilience, Perseverance and Paths in Academia: Strategies and Perspectives for Early Career Researchers (under review).</li>
       </ol>
       <p class="pubs__note reveal">Selected media coverage: General-Anzeiger Bonn, Augsburger Allgemeine,
       Deutschlandfunk Kultur, Highways to Health, Digital Business Cloud.</p>
@@ -374,6 +389,9 @@
           <li>Professor of Information Systems, Esslingen University of Applied Sciences</li>
           <li>Head, Central Academic Institution for Digital Transformation in Study and Teaching</li>
           <li>Co-Head of Research Group, Fraunhofer FIT Institute Branch Information Systems</li>
+          <li>Director, FIM Research Center for Information Management</li>
+          <li>Member of the working group “Information Systems at Universities of Applied Sciences”
+          of Die Wirtschaftsinformatik e.&nbsp;V.</li>
         </ul>
         <p class="about__links">
           <a href="mailto:manfred.schoch@hs-esslingen.de">E-mail</a> ·

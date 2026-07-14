@@ -47,6 +47,20 @@ problems — climate, health, the future of work — crowds can generate and eva
 solution ideas at scale. But collective intelligence needs careful design:
 incentives, aggregation, and process.
 
+**Data-Viz (Sticky-Text):**
+Titel: Same judges, different question
+Across four innovation contests of ascending specialization — from *attitudes &
+behaviors* to *energy supply* — we compared crowd judgments with an LLM evaluator.
+Asked for **absolute ratings**, the LLM hovered at chance level. Asked for
+**computed rankings**, it kept pace with the crowd — even in the most specialized
+contest. How you ask matters more than what you ask about.
+Stat: 50 % → 80 % — LLM balanced accuracy: from chance level (absolute ratings) to
+crowd level (computed rankings)
+Chart: zwei Panels (Absolute ratings / Computed rankings), Linien Crowd vs. LLM über
+Contests C1–C4, gestrichelte "chance"-Linie bei 50 %.
+Caption: Schematic recreation (balanced accuracy) based on Gimpel, Laubacher, Probost,
+Schäfer & Schoch (2025, GDN). Contests 1→4 in ascending specialization.
+
 **Pullquote:** Crowds can evaluate ideas for problems that overwhelm any single
 expert — if the inner workings of the collective are managed well.
 
@@ -126,7 +140,7 @@ intelligence effects that go beyond what stronger individual models achieve.
   A GenAI-based multi-agent prototype for business process improvement — live-demoed
   at DESRIST.
 
-**Outlook:** Currently under review: how to balance *human agency and system autonomy*
+**Outlook:** Current work: how to balance *human agency and system autonomy*
 when orchestrating multi-agent systems — the question that connects all three acts,
 and the one I care about most.
 
@@ -210,8 +224,8 @@ strand asks what constant connectivity does to us.
 ## 9. Publications
 
 <!-- Liste wird aus dem Schriftenverzeichnis gepflegt (vollständig in index.html).
-     Filter: All / Journal articles / Conference papers / Studies & white papers / In progress.
-     Under-Review-Einträge bewusst ohne Journalnamen. -->
+     Filter: All / Journal articles / Conference papers / Studies & white papers.
+     Under-Review-Arbeiten erscheinen bewusst NICHT auf der Website. -->
 
 **Media-Note:** Selected media coverage: General-Anzeiger Bonn, Augsburger Allgemeine,
 Deutschlandfunk Kultur, Highways to Health, Digital Business Cloud.
@@ -222,6 +236,9 @@ Deutschlandfunk Kultur, Highways to Health, Digital Business Cloud.
 - Professor of Information Systems, Esslingen University of Applied Sciences
 - Head, Central Academic Institution for Digital Transformation in Study and Teaching
 - Co-Head of Research Group, Fraunhofer FIT Institute Branch Information Systems
+- Director, FIM Research Center for Information Management
+- Member of the working group "Information Systems at Universities of Applied Sciences"
+  of Die Wirtschaftsinformatik e. V.
 
 Links: E-Mail (manfred.schoch@hs-esslingen.de) · LinkedIn
 (https://www.linkedin.com/in/manfred-schoch-42257877) · Google Scholar

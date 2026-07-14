@@ -312,6 +312,78 @@
     if (prefersReduced) slopes.classList.add("in-view");
   }
 
+  /* ---------- Contests chart (schematic, Act 1) ---------- */
+  var contests = document.getElementById("contests-chart");
+  if (contests) {
+    var cAdd = function (el, attrs, text) {
+      var n = document.createElementNS(SVGNS, el);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      if (text) n.textContent = text;
+      contests.appendChild(n);
+      return n;
+    };
+    var C_INK = "#15151d", C_SOFT = "#4a4a58", C_LINE = "#dcd9d0", C_ACC = "#2547d0", C_WARM = "#d97e00";
+    // Balanced accuracy (%), contests G1..G4 in ascending specialization.
+    var cPanels = [
+      { x: 20, title: "Absolute ratings", result: "LLM stuck at chance level", pill: "rgba(21,21,29,0.07)", pillText: C_SOFT,
+        crowd: [79, 56, 50, 50], llm: [50, 50, 50, 50], chance: true },
+      { x: 300, title: "Computed rankings", result: "LLM keeps pace with the crowd", pill: "rgba(37,71,208,0.12)", pillText: C_ACC,
+        crowd: [77, 66, 54, 69], llm: [80, 74, 69, 76] }
+    ];
+    // Legend
+    [["Crowd", C_INK, 20], ["LLM", C_ACC, 110]].forEach(function (l) {
+      cAdd("line", { x1: l[2], y1: 14, x2: l[2] + 26, y2: 14, stroke: l[1], "stroke-width": 2.6 });
+      cAdd("circle", { cx: l[2] + 13, cy: 14, r: 3.6, fill: l[1] });
+      cAdd("text", { x: l[2] + 32, y: 18, fill: C_INK, "font-size": 12.5 }, l[0]);
+    });
+    var cPT = 46, cPB = 276, cPW = 240;
+    var yOf = function (v) { return cPB - ((v - 40) / 50) * (cPB - cPT - 14); };
+    cPanels.forEach(function (p) {
+      var x0 = p.x + 8, x1 = p.x + cPW - 8;
+      var xOf = function (i) { return x0 + 20 + (i / 3) * (x1 - x0 - 40); };
+      cAdd("text", { x: p.x + 8, y: cPT - 8, fill: C_INK, "font-size": 14.5, "font-weight": 700 }, p.title);
+      cAdd("line", { x1: x0, y1: cPB, x2: x1, y2: cPB, stroke: C_LINE, "stroke-width": 1.5 });
+      cAdd("line", { x1: x0, y1: cPT + 4, x2: x0, y2: cPB, stroke: C_LINE, "stroke-width": 1.5 });
+      [50, 65, 80].forEach(function (g) {
+        cAdd("line", { x1: x0, y1: yOf(g), x2: x1, y2: yOf(g), stroke: C_LINE, "stroke-width": 0.7, opacity: 0.7 });
+        cAdd("text", { x: x0 - 4, y: yOf(g) + 3.5, fill: C_SOFT, "font-size": 10, "text-anchor": "end" }, g + "%");
+      });
+      if (p.chance) {
+        cAdd("line", { x1: x0, y1: yOf(50), x2: x1, y2: yOf(50), stroke: C_WARM, "stroke-width": 1.4, "stroke-dasharray": "5 4" });
+        cAdd("text", { x: x1, y: yOf(50) - 6, fill: C_WARM, "font-size": 11, "text-anchor": "end", "font-style": "italic" }, "chance");
+      }
+      var group = cAdd("g", { class: "slopes-lines" });
+      [["crowd", C_INK], ["llm", C_ACC]].forEach(function (s) {
+        var pts = p[s[0]].map(function (v, i) { return xOf(i) + "," + yOf(v); }).join(" ");
+        var pl = document.createElementNS(SVGNS, "polyline");
+        pl.setAttribute("points", pts);
+        pl.setAttribute("fill", "none"); pl.setAttribute("stroke", s[1]);
+        pl.setAttribute("stroke-width", 2.6); pl.setAttribute("stroke-linejoin", "round");
+        group.appendChild(pl);
+        p[s[0]].forEach(function (v, i) {
+          var c = document.createElementNS(SVGNS, "circle");
+          c.setAttribute("cx", xOf(i)); c.setAttribute("cy", yOf(v));
+          c.setAttribute("r", 3.8); c.setAttribute("fill", s[1]);
+          group.appendChild(c);
+        });
+      });
+      for (var i = 0; i < 4; i++) {
+        cAdd("text", { x: xOf(i), y: cPB + 16, fill: C_SOFT, "font-size": 10.5, "text-anchor": "middle" }, "C" + (i + 1));
+      }
+      cAdd("text", { x: x0 + 12, y: cPB + 32, fill: C_SOFT, "font-size": 10.5 }, "specialization →");
+      var pw = p.result.length * 6.4 + 22;
+      cAdd("rect", { x: p.x + 8, y: cPB + 42, width: pw, height: 24, rx: 12, fill: p.pill });
+      cAdd("text", { x: p.x + 19, y: cPB + 58, fill: p.pillText, "font-size": 12.5, "font-weight": 600 }, p.result);
+    });
+    var contestsObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { contests.classList.add("in-view"); contestsObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.35 });
+    contestsObserver.observe(contests);
+    if (prefersReduced) contests.classList.add("in-view");
+  }
+
   /* ---------- Publication filter ---------- */
   var filterBtns = document.querySelectorAll(".pubs__filter");
   var pubItems = document.querySelectorAll(".pubs__list li");

@@ -1,12 +1,11 @@
-# Website-Notizen
+# Website-Notizen (PoC)
 
-## Deployment
-- Jeder Push auf `main` deployed automatisch auf GitHub Pages (Workflow
-  `deploy-pages.yml`, versucht die Pages-Aktivierung selbst vorzunehmen). Falls der
-  erste Lauf an der Aktivierung scheitert: einmalig **Settings → Pages → Source:
-  "GitHub Actions"** setzen und den Workflow erneut starten.
-- Dieses öffentliche Repo enthält NUR die Website. Forschungsnotizen/Vault bleiben
-  im privaten Hermes-Repo.
+## Deployment aktivieren
+1. Branch in `main` mergen (der Workflow `deploy-pages.yml` triggert auf `main` + Änderungen unter `website/`).
+2. In GitHub: **Settings → Pages → Source: "GitHub Actions"** wählen (einmalig).
+3. Hinweis: Bei einem **privaten** Repo erfordert GitHub Pages einen Bezahl-Plan (Pro/Team).
+   Empfehlung mittelfristig: Website in ein eigenes **öffentliches** Repo auslagern
+   (dann ist Pages garantiert kostenlos und der Hermes-Vault bleibt strikt getrennt).
 
 ## Content-Workflow
 - **`content.md` ist die Single Source of Truth für alle Website-Texte.** Dort direkt
@@ -26,8 +25,10 @@
 - **Zahlen/Aussagen**: ρ = 0.76 und Kernaussagen stammen aus dem Graphical Abstract zu
   Probost, Schoch, et al. (2026, GDN). Akt-2-Findings (divergent/konvergent) aus der
   Zusammenfassung zu Endres et al. (SJIS). Vor Livegang gegen die Paper prüfen.
-- **Under-Review-Papers**: bewusst ohne Journalnamen gelistet (nur Titel + "under review").
-  Falls Journals genannt werden sollen: einfach ergänzen.
+- **Under-Review-Papers**: erscheinen bewusst NICHT auf der Website (Entscheidung 14.07.2026).
+  Nach Annahme eines Papers: Eintrag in `content.md` + `index.html` ergänzen.
+- **Bildnachweise im Impressum**: "Porträtfoto: FIM Forschungszentrum" bitte bestätigen
+  (exakte gewünschte Credit-Schreibweise?).
 - **Hero-Statistiken** (Zählweise, Stand 14.07.2026):
   - "30+ publications": alle veröffentlichten/angenommenen Journal-, Konferenz- und
     White-Paper-Beiträge inkl. forthcoming.

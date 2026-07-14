@@ -169,7 +169,8 @@ section[id] { scroll-margin-top: 4.5rem; }
   .dataviz__side { position: static; }
 }
 .slopes-lines { clip-path: inset(0 100% 0 0); transition: clip-path 1.3s ease 0.25s; }
-#slopes-chart.in-view .slopes-lines { clip-path: inset(0 0 0 0); }
+#slopes-chart.in-view .slopes-lines,
+#contests-chart.in-view .slopes-lines { clip-path: inset(0 0 0 0); }
 @media (prefers-reduced-motion: reduce) {
   .slopes-lines { clip-path: none; transition: none; }
 }
