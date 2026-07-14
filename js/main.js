@@ -6,6 +6,9 @@
   var SVGNS = "http://www.w3.org/2000/svg";
 
   /* ---------- Reveal on scroll ---------- */
+  // threshold 0 + bottom rootMargin: fires once the element crosses ~8% above
+  // the viewport bottom. A ratio threshold would never fire for elements taller
+  // than the viewport (e.g. the publication list on phones).
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
@@ -13,7 +16,7 @@
         revealObserver.unobserve(e.target);
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
   document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
 
   /* ---------- Chapter hero: oval draw ---------- */
@@ -230,6 +233,83 @@
     }, { threshold: 0.4 });
     chartObserver.observe(chart);
     if (prefersReduced) curveEls.forEach(function (el) { el.setAttribute("opacity", 1); });
+  }
+
+  /* ---------- Simple-slopes chart (schematic, Act 2) ---------- */
+  var slopes = document.getElementById("slopes-chart");
+  if (slopes) {
+    var sAdd = function (el, attrs, text) {
+      var n = document.createElementNS(SVGNS, el);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      if (text) n.textContent = text;
+      slopes.appendChild(n);
+      return n;
+    };
+    var INK = "#15151d", SOFT = "#4a4a58", LINEC = "#dcd9d0";
+    var series = [
+      { key: "low", label: "Low individual creativity", stroke: "#2547d0" },
+      { key: "med", label: "Medium", stroke: "#d97e00", dash: "8 5" },
+      { key: "high", label: "High", stroke: "#15151d", dash: "2 5" }
+    ];
+    // Normalized end points (0 = plot bottom, 1 = plot top), read off the article's figure.
+    var panels = [
+      {
+        x: 20, title: "Divergent thinking", sub: "generating ideas", result: "Differences flatten out",
+        lines: { low: [0.06, 0.23], med: [0.22, 0.57], high: [0.39, 0.0] }
+      },
+      {
+        x: 300, title: "Convergent thinking", sub: "selecting & refining", result: "AI literacy decides",
+        lines: { low: [0.03, 0.92], med: [0.51, 0.65], high: [0.64, 0.53] }
+      }
+    ];
+    // Legend (top, horizontal)
+    var lx = 20;
+    series.forEach(function (s) {
+      var seg = sAdd("line", { x1: lx, y1: 14, x2: lx + 26, y2: 14, stroke: s.stroke, "stroke-width": 2.6 });
+      if (s.dash) seg.setAttribute("stroke-dasharray", s.dash);
+      var t = sAdd("text", { x: lx + 32, y: 18, fill: INK, "font-size": 12.5 }, s.label);
+      lx += 32 + s.label.length * 6.4 + 22;
+    });
+    var PT = 46, PB = 296, PW = 240;
+    panels.forEach(function (p) {
+      var x0 = p.x + 8, x1 = p.x + PW - 8;
+      sAdd("text", { x: p.x + 8, y: PT - 8, fill: INK, "font-size": 14.5, "font-weight": 700 }, p.title);
+      sAdd("text", { x: p.x + 8, y: PT + 8, fill: SOFT, "font-size": 11.5 }, p.sub);
+      // frame + gridlines
+      sAdd("line", { x1: x0, y1: PB, x2: x1, y2: PB, stroke: LINEC, "stroke-width": 1.5 });
+      sAdd("line", { x1: x0, y1: PT + 16, x2: x0, y2: PB, stroke: LINEC, "stroke-width": 1.5 });
+      [0.25, 0.5, 0.75].forEach(function (g) {
+        var gy = PB - g * (PB - PT - 24);
+        sAdd("line", { x1: x0, y1: gy, x2: x1, y2: gy, stroke: LINEC, "stroke-width": 0.7, opacity: 0.7 });
+      });
+      // lines (in a group clipped for the draw-in animation)
+      var group = sAdd("g", { class: "slopes-lines" });
+      series.forEach(function (s) {
+        var v = p.lines[s.key];
+        var y0 = PB - v[0] * (PB - PT - 24), y1 = PB - v[1] * (PB - PT - 24);
+        var ln = document.createElementNS(SVGNS, "line");
+        ln.setAttribute("x1", x0 + 6); ln.setAttribute("y1", y0);
+        ln.setAttribute("x2", x1 - 6); ln.setAttribute("y2", y1);
+        ln.setAttribute("stroke", s.stroke); ln.setAttribute("stroke-width", 2.6);
+        ln.setAttribute("stroke-linecap", "round");
+        if (s.dash) ln.setAttribute("stroke-dasharray", s.dash);
+        group.appendChild(ln);
+      });
+      // axis labels + result pill
+      sAdd("text", { x: x0, y: PB + 18, fill: SOFT, "font-size": 11.5 }, "low AI literacy");
+      sAdd("text", { x: x1, y: PB + 18, fill: SOFT, "font-size": 11.5, "text-anchor": "end" }, "high AI literacy");
+      var pw = p.result.length * 6.6 + 22;
+      sAdd("rect", { x: p.x + 8, y: PB + 30, width: pw, height: 24, rx: 12, fill: p.x < 100 ? "rgba(21,21,29,0.07)" : "rgba(37,71,208,0.12)" });
+      sAdd("text", { x: p.x + 19, y: PB + 46, fill: p.x < 100 ? SOFT : "#2547d0", "font-size": 12.5, "font-weight": 600 }, p.result);
+    });
+    sAdd("text", { x: 12, y: 180, fill: SOFT, "font-size": 11.5, transform: "rotate(-90 12 180)", "text-anchor": "middle" }, "performance");
+    var slopesObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { slopes.classList.add("in-view"); slopesObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.35 });
+    slopesObserver.observe(slopes);
+    if (prefersReduced) slopes.classList.add("in-view");
   }
 
   /* ---------- Publication filter ---------- */

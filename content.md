@@ -69,11 +69,18 @@ creative tasks with GenAI and analyzed their prompting: whether the partnership
 pays off depends on **AI literacy** — and on which kind of thinking the task demands.
 Human judgment does not disappear; it moves up the stack.
 
-**Finding-Cards:**
-- Finding · Divergent thinking — *AI levels the playing field* — For idea generation,
-  people benefit from GenAI largely regardless of their AI literacy.
-- Finding · Convergent thinking — *Judgment is a skill* — When selecting and refining
-  ideas, AI literacy and prompting strategy largely determine success.
+**Data-Viz (Sticky-Text):**
+Titel: Where AI literacy pays off
+In **divergent** tasks — generating ideas — GenAI levels the playing field: effects of
+AI literacy are mixed, and performance differences flatten out.
+In **convergent** tasks — selecting and refining — **AI literacy decides**, because
+convergence requires sophisticated prompting. The steepest gains go to people with
+*lower* individual creativity: skilled prompting lets them close the gap. And it takes
+**human–AI co-creation**, not AI alone, to turn that capability into performance.
+Chart: zwei schematische Simple-Slopes-Panels (divergent: "Differences flatten out" /
+convergent: "AI literacy decides"), Linien nach Individual Creativity (low/medium/high).
+Caption: Schematic recreation of the simple-slopes analysis in Endres, Kreuzer,
+Schoch & Schöttl (forthcoming, SJIS).
 
 **Pullquote:** For brainstorming, AI levels the playing field. For deciding, human
 judgment makes the difference.
@@ -178,11 +185,10 @@ course formats around generative AI.
   fundamentals through generative and agentic AI to architecture principles and
   hands-on prototyping: student teams identify AI use cases, pitch them, and build
   them — vibe coding included.
-- Cyberweek workshop — *Vibe Coding: From Creativity to AI Prototype* — With Benjamin
-  Wiedenbruch: creative methods to find smart AI use cases in the morning; in the
-  afternoon, steering AI assistants in natural language to turn the concept into
-  running code — deliberately without needing to understand the code behind it.
-  One day, one working AI prototype.
+- Cyberweek workshop — *Vibe Coding: From Creativity to AI Prototype* — Creative
+  methods to find smart AI use cases in the morning; in the afternoon, steering AI
+  assistants in natural language to turn the concept into running code — deliberately
+  without needing to understand the code behind it. One day, one working AI prototype.
 - Guides · 2023 / 2025 — *Generative AI in Higher Education* — Co-author of widely
   used guides for students and instructors on using GenAI in university teaching.
   → https://doi.org/10.62273/QLLG7172

@@ -168,6 +168,11 @@ section[id] { scroll-margin-top: 4.5rem; }
   .dataviz { grid-template-columns: 1fr; }
   .dataviz__side { position: static; }
 }
+.slopes-lines { clip-path: inset(0 100% 0 0); transition: clip-path 1.3s ease 0.25s; }
+#slopes-chart.in-view .slopes-lines { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) {
+  .slopes-lines { clip-path: none; transition: none; }
+}
 
 /* ============ Bands (practice / teaching / beyond) ============ */
 .band { padding: 5rem 0; border-top: 1px solid var(--line); }
