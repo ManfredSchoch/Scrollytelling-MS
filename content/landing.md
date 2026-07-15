@@ -22,10 +22,14 @@ the human side of digital work — told here as interactive research stories.
    the data to back it up. → stories/crowds-to-agents/
 2. **Orchestrating the Agentic Enterprise** (Story 02 · Coming soon) — Design knowledge
    for building and steering GenAI multi-agent systems in practice: orchestration
-   choices between control and autonomy, agile development, and the AWA project.
-3. **The Human Side of Digital Work** (Story 03 · Coming soon) — Technostress, time
-   poverty, and coping: what constant connectivity does to us over time — and which
-   interventions actually help.
+   choices between control and autonomy, and agile agent development.
+   <!-- Regel: "AWA" als Projektname NICHT auf der Landing (versteht niemand). -->
+3. **The Human Side of Digital Work** (Story 03 · Coming soon) — How organizations
+   bring AI and digital technology to their entire workforce: change management,
+   digital trace data analysis — from workplace tools to AI agents — and interventions
+   that take people's difficulties and fears seriously.
+   <!-- Regel: Unternehmensperspektive; KEINE akademischen Begriffe wie "Technostress"
+        oder "Time Poverty" auf der Landing. -->
 
 ## About / Kontakt
 Prof. Dr. Manfred Schoch
@@ -36,9 +40,9 @@ Prof. Dr. Manfred Schoch
 - Member of the working group "Information Systems at Universities of Applied Sciences"
   of Die Wirtschaftsinformatik e. V.
 
-Teaching-Satz: I teach Solution Architecture, Business Processes, and the Vibe Coding
-workshop, and I organize the university-wide Cyberweek — each story features the
-teaching that belongs to it.
+Teaching-Satz: I teach Solution Architecture, Business Process Management, Data
+Analytics, a Vibe Coding & Creativity workshop, and I organize the university-wide
+Cyberweek — each story features the teaching that belongs to it.
 
 Links: E-Mail (manfred.schoch@hs-esslingen.de) · LinkedIn · Google Scholar
 
@@ -49,3 +53,11 @@ Studies & white papers) — wohnt NUR hier. Under-Review-Arbeiten erscheinen nic
 ## Footer
 © [Jahr] Manfred Schoch · This site sets no cookies and uses no tracking.
 Links: Impressum · Datenschutz
+
+## Story-Kachel-Motive (Farbwelten)
+- Story 1: dunkle Bühne, Glühbirnen → Agenten-Netz (Indigo/Orange) — wie Story-Opening.
+- Story 2: Teal (#0f766e) — Orchestrator delegiert an Agenten (Hierarchie, gestrichelte
+  Delegations-Pfeile).
+- Story 3: Violett (#6d4aa6, bewusst rot-grün-sicher gegen Teal) — Mensch ⟷ Bildschirm
+  mit Digital-Trace-Linie.
+- Kachel-Texte nachschärfen, sobald die jeweilige Storyline steht.

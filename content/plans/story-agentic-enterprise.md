@@ -1,6 +1,8 @@
 # Content-Plan: Story 2 — "Orchestrating the Agentic Enterprise" (Phase 2)
 
 Status: Input gesammelt (14.07.2026), Umsetzung noch nicht gestartet.
+Kachel-Text auf der Landing: ohne "AWA" (versteht niemand) — stattdessen
+"agile agent development" nennen; AWA wird erst IN der Story eingeführt.
 Charakter: **gestaltungsorientierte Forschung** (Design Science) — kaum quantitative
 Charts. Visuelle Sprache daher: Architektur-Schemata, Entscheidungsräume,
 Prozess-Diagramme, Vorher/Nachher — statt Datenplots. Vor Umsetzung nochmal mit

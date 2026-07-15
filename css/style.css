@@ -258,6 +258,13 @@ a.story-card:hover .card__link { text-decoration: underline; }
   background: var(--paper-deep); border-bottom: 1px solid var(--line);
 }
 .story-card__motif svg { width: 100%; height: auto; display: block; }
+/* per-story color presence (echoes each story's accent world) */
+.story-card__motif--crowds { background: var(--stage); }
+.story-card__motif--agentic { background: rgba(15,118,110,0.09); border-bottom-color: rgba(15,118,110,0.25); }
+.story-card__motif--human { background: rgba(109,74,166,0.09); border-bottom-color: rgba(109,74,166,0.25); }
+.story-card:nth-child(1) .card__venue { color: #d97e00; }
+.story-card:nth-child(2) .card__venue { color: #0f766e; }
+.story-card:nth-child(3) .card__venue { color: #6d4aa6; }
 .story-card--soon { opacity: 0.88; }
 .badge-soon {
   align-self: flex-start; margin-top: 0.3rem;

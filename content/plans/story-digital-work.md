@@ -18,3 +18,17 @@ Status: Skizze. Detail-Input von Manfred (Lieblings-Findings) steht noch aus.
 - Wenn ein Kapitel genug Substanz bekommt (z. B. Gamification nach Annahme),
   wird es zur eigenen Story herausgelöst.
 - Teaching-Zuschnitt Story 3: offen (evtl. Cyberweek/ZWE-Fokus). Mit Manfred klären.
+
+## Reframing (Feedback 15.07.2026) — Unternehmensperspektive!
+- Auf Landing/Einstieg KEINE akademischen Begriffe (kein "Technostress", kein
+  "Time Poverty") — die Konstrukte dürfen in der Story selbst vorkommen, aber die
+  Rahmung ist: Wie bringen Organisationen Technologie/AI in die Breite der Belegschaft?
+- Themen, die kurz platziert werden sollen:
+  - **Digital Trace Data Analysis** — inkl. des Themas **Agent Tracing** (WIP-Paper
+    existiert, darf NICHT genannt werden; nur das Thema platzieren).
+  - **Change Management** und ggf. **Democratization of AI** (auch wenn später nicht
+    explizit vertieft).
+  - Schwierigkeiten und Ängste im Umgang mit IT + geeignete Interventionen.
+- **Praxisprojekte** für die Practice-Sektion:
+  - Change Management & New Digital Work Strategy bei einer Bank (Name nicht nennen).
+  - Workshops und Schulungen (auch zu AI).
