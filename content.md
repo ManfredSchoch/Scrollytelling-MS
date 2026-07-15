@@ -32,7 +32,7 @@ crowds to the wisdom of agents.
 **Stats:**
 - 30+ · peer-reviewed publications
 - 6 · journal articles in VHB-A/B journals
-- 12 · papers at VHB-A/B conferences
+- 13 · papers at VHB-A/B conferences
 
 <!-- Zählweise siehe NOTES.md. Bei neuen Papers hier + NOTES.md aktualisieren. -->
 
@@ -48,14 +48,15 @@ solution ideas at scale. But collective intelligence needs careful design:
 incentives, aggregation, and process.
 
 **Data-Viz (Sticky-Text):**
-Titel: Same judges, different question
+Titel: Same answers, different reading
 Across four innovation contests of ascending specialization — from *attitudes &
 behaviors* to *energy supply* — we compared crowd judgments with an LLM evaluator.
-Asked for **absolute ratings**, the LLM hovered at chance level. Asked for
-**computed rankings**, it kept pace with the crowd — even in the most specialized
-contest. How you ask matters more than what you ask about.
-Stat: 50 % → 80 % — LLM balanced accuracy: from chance level (absolute ratings) to
-crowd level (computed rankings)
+Used as **absolute ratings** — averaging the raw scores — the LLM's judgments hovered
+at chance level. Turned into **computed rankings** — relative ranks built from those
+same scores — they kept pace with the crowd, even in the most specialized contest.
+**What you do with the answers matters more than what you ask.**
+Stat: 50 % → 80 % — LLM balanced accuracy: the same scores, read as averages
+(absolute ratings) vs. as computed rankings
 Chart: zwei Panels (Absolute ratings / Computed rankings), Linien Crowd vs. LLM über
 Contests C1–C4, gestrichelte "chance"-Linie bei 50 %.
 Caption: Schematic recreation (balanced accuracy) based on Gimpel, Laubacher, Probost,
@@ -157,9 +158,11 @@ backdrop of skilled-labor shortage. In the AWA research project at the Fraunhofe
 Institute Branch Information Systems, where I co-lead a research group, we develop
 and test such systems along concrete industry use cases.
 
-**Bild:** `assets/awa-architecture.jpg` — Caption: How a GenAI-based multi-agent
-system is embedded in an organization: coordinated specialist agents, each perceiving,
-remembering, and acting on top of a foundation model. Illustration: Fraunhofer FIT.
+**Bild:** `assets/awa-architecture.svg` (eigene englische Schematik) — Caption: How a
+GenAI-based multi-agent system is embedded in an organization: one workflow step is
+handled by coordinated specialist agents, and each agent perceives, remembers, and
+acts on top of a foundation model. Own schematic, based on the AWA project
+(Fraunhofer FIT).
 
 The project distills scientific and practical guidance along three phases:
 

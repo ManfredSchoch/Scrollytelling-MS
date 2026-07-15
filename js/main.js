@@ -81,11 +81,11 @@
     var DOTS = 42, dots = [];
     for (var i = 0; i < DOTS; i++) {
       var hub = hubs[i % hubs.length];
-      var ang = rand() * Math.PI * 2, dist = 14 + rand() * 34;
+      var ang = rand() * Math.PI * 2, dist = 18 + rand() * 34;
       dots.push({
         sx: 60 + rand() * (W - 120), sy: 60 + rand() * (H - 120),
         tx: hub.x + dist * Math.cos(ang), ty: hub.y + dist * Math.sin(ang),
-        r: 3 + rand() * 2.5, phase: rand() * Math.PI * 2
+        s: 0.75 + rand() * 0.6, phase: rand() * Math.PI * 2
       });
     }
 
@@ -113,15 +113,32 @@
       canvas.appendChild(c);
       return c;
     });
-    var dotEls = dots.map(function (d) {
-      var c = document.createElementNS(SVGNS, "circle");
-      c.setAttribute("cx", d.sx); c.setAttribute("cy", d.sy);
-      c.setAttribute("r", d.r);
-      c.setAttribute("fill", "#c9c9dc");
-      c.setAttribute("opacity", "0.85");
-      canvas.appendChild(c);
-      return c;
-    });
+    // Ideas as little glowing lightbulbs (instead of anonymous dots).
+    function makeBulb(d) {
+      var g = document.createElementNS(SVGNS, "g");
+      var glow = document.createElementNS(SVGNS, "circle");
+      glow.setAttribute("r", "9"); glow.setAttribute("cy", "-1.5");
+      glow.setAttribute("fill", "#f7d774"); glow.setAttribute("opacity", "0.16");
+      g.appendChild(glow);
+      var glass = document.createElementNS(SVGNS, "circle");
+      glass.setAttribute("r", "4.4"); glass.setAttribute("cy", "-1.5");
+      glass.setAttribute("fill", "#f7d774"); glass.setAttribute("stroke", "#e5b95c");
+      glass.setAttribute("stroke-width", "0.8");
+      g.appendChild(glass);
+      var base = document.createElementNS(SVGNS, "rect");
+      base.setAttribute("x", "-2"); base.setAttribute("y", "3");
+      base.setAttribute("width", "4"); base.setAttribute("height", "3.4");
+      base.setAttribute("rx", "1"); base.setAttribute("fill", "#8f8fa3");
+      g.appendChild(base);
+      g.setAttribute("opacity", "0.92");
+      g.setAttribute("transform", "translate(" + d.sx + " " + d.sy + ") scale(" + d.s + ")");
+      canvas.appendChild(g);
+      return g;
+    }
+    var dotEls = dots.map(makeBulb);
+    function placeBulb(el, d, x, y) {
+      el.setAttribute("transform", "translate(" + x + " " + y + ") scale(" + d.s + ")");
+    }
 
     var ease = function (t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
     var lastStep = -1, ticking = false;
@@ -133,22 +150,22 @@
       var p = Math.min(Math.max(-rect.top / total, 0), 1);
 
       // Blurb steps
-      var step = p < 0.3 ? 0 : p < 0.62 ? 1 : 2;
+      var step = p < 0.26 ? 0 : p < 0.56 ? 1 : 2;
       if (step !== lastStep) {
         blurbs.forEach(function (b, idx) { b.classList.toggle("is-active", idx === step); });
         lastStep = step;
       }
 
-      // Morph: crowd (p<0.35) -> network (p>0.78)
-      var m = ease(Math.min(Math.max((p - 0.35) / 0.43, 0), 1));
+      // Morph: crowd (p<0.15) -> network (p>0.6) — starts early so the very
+      // first scroll already moves the bulbs.
+      var m = ease(Math.min(Math.max((p - 0.15) / 0.45, 0), 1));
       var t = performance.now() / 1000;
       dots.forEach(function (d, idx) {
-        var jx = Math.sin(t * 0.7 + d.phase) * 6 * (1 - m);
-        var jy = Math.cos(t * 0.6 + d.phase) * 6 * (1 - m);
-        dotEls[idx].setAttribute("cx", d.sx + (d.tx - d.sx) * m + jx);
-        dotEls[idx].setAttribute("cy", d.sy + (d.ty - d.sy) * m + jy);
+        var jx = Math.sin(t * 0.7 + d.phase) * 7 * (1 - m);
+        var jy = Math.cos(t * 0.6 + d.phase) * 7 * (1 - m);
+        placeBulb(dotEls[idx], d, d.sx + (d.tx - d.sx) * m + jx, d.sy + (d.ty - d.sy) * m + jy);
       });
-      var net = Math.min(Math.max((p - 0.66) / 0.24, 0), 1);
+      var net = Math.min(Math.max((p - 0.5) / 0.24, 0), 1);
       linkEls.forEach(function (el) { el.setAttribute("opacity", (net * 0.7).toFixed(3)); });
       hubEls.forEach(function (el) { el.setAttribute("opacity", net.toFixed(3)); });
 
@@ -164,7 +181,7 @@
     if (prefersReduced) {
       // Static final state: network shown, all blurbs visible via CSS.
       dots.forEach(function (d, idx) {
-        dotEls[idx].setAttribute("cx", d.tx); dotEls[idx].setAttribute("cy", d.ty);
+        placeBulb(dotEls[idx], d, d.tx, d.ty);
       });
       linkEls.forEach(function (el) { el.setAttribute("opacity", "0.7"); });
       hubEls.forEach(function (el) { el.setAttribute("opacity", "1"); });

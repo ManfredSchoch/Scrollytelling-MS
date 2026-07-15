@@ -65,7 +65,7 @@
           <span class="stat__label">peer-reviewed publications</span></div>
         <div class="stat"><span class="stat__num" data-count="6">0</span>
           <span class="stat__label">journal articles in VHB-A/B journals</span></div>
-        <div class="stat"><span class="stat__num" data-count="12">0</span>
+        <div class="stat"><span class="stat__num" data-count="13">0</span>
           <span class="stat__label">papers at VHB-A/B conferences</span></div>
       </div>
     </div>
@@ -86,15 +86,16 @@
       But collective intelligence needs careful design: incentives, aggregation, and process.</p>
       <div class="dataviz reveal" aria-label="Key findings from Idea Evaluation with Crowds and LLMs">
         <div class="dataviz__side">
-          <h3 class="dataviz__title">Same judges, different question</h3>
+          <h3 class="dataviz__title">Same answers, different reading</h3>
           <p>Across four innovation contests of ascending specialization — from <em>attitudes &amp;
           behaviors</em> to <em>energy supply</em> — we compared crowd judgments with an LLM evaluator.</p>
-          <p>Asked for <strong>absolute ratings</strong>, the LLM hovered at chance level. Asked for
-          <strong>computed rankings</strong>, it kept pace with the crowd — even in the most
-          specialized contest. How you ask matters more than what you ask about.</p>
+          <p>Used as <strong>absolute ratings</strong> — averaging the raw scores — the LLM's judgments
+          hovered at chance level. Turned into <strong>computed rankings</strong> — relative ranks built
+          from those same scores — they kept pace with the crowd, even in the most specialized contest.
+          <strong>What you do with the answers matters more than what you ask.</strong></p>
           <div class="dataviz__stat">
             <span class="dataviz__num">50&nbsp;% → 80&nbsp;%</span>
-            <span class="dataviz__caption">LLM balanced accuracy: from chance level (absolute ratings) to crowd level (computed rankings)</span>
+            <span class="dataviz__caption">LLM balanced accuracy: the same scores, read as averages (absolute ratings) vs. as computed rankings</span>
           </div>
         </div>
         <figure class="dataviz__chart">
@@ -247,11 +248,11 @@
       research project</a> at the Fraunhofer FIT Institute Branch Information Systems, where I co-lead a
       research group, we develop and test such systems along concrete industry use cases.</p>
       <figure class="figure reveal">
-        <img src="assets/awa-architecture.jpg" loading="lazy" width="1857" height="1360"
-             alt="Architecture diagram: a workflow with AI agents on a user interface, below it a multi-agent system of coordinated agents connected to external data sources and tools; each agent perceives, remembers, and acts on top of a foundation model, embedded in the enterprise environment">
-        <figcaption>How a GenAI-based multi-agent system is embedded in an organization: coordinated
-        specialist agents, each perceiving, remembering, and acting on top of a foundation model.
-        Illustration: Fraunhofer FIT.</figcaption>
+        <img src="assets/awa-architecture.svg" loading="lazy" width="1000" height="505"
+             alt="Schematic: a workflow step is handled by a multi-agent system of coordinated agents connected to external data sources and tools; each agent perceives, remembers, and acts on top of a foundation model, embedded in the enterprise environment">
+        <figcaption>How a GenAI-based multi-agent system is embedded in an organization: one workflow
+        step is handled by coordinated specialist agents, and each agent perceives, remembers, and acts
+        on top of a foundation model. Own schematic, based on the AWA project (Fraunhofer&nbsp;FIT).</figcaption>
       </figure>
       <p class="reveal">The project distills scientific and practical guidance along three phases —
       and publishes it as compact <strong>“Knowledge Nuggets”</strong> for practitioners:</p>
@@ -361,7 +362,7 @@
         <li data-type="journal">Schoch, M. (2023). The Interplay of Appraisal and Self-Efficacy: Technostress and Remote Working Performance During COVID-19. <em>Australasian Journal of Information Systems, 27</em>.</li>
         <li data-type="journal">Lanzl, J., Schoch, M., &amp; Gimpel, H. (2023). A Dark Side of IT Consumerization: How Mixed IT Portfolios with Private and Business IT Components Cause Unreliability. <em>Australasian Journal of Information Systems, 27</em>.</li>
         <li data-type="journal">Kreuzer, T., Lanzl, J., Römmelt, J., Schoch, M., &amp; Wenninger, S. (2022). Ein integriertes Konzept für nachhaltige hybride Arbeit. <em>HMD Praxis der Wirtschaftsinformatik, 59</em>(4), 1032–1045. <a href="https://doi.org/10.1365/s40702-022-00882-9">DOI</a></li>
-        <li data-type="conference">Fetzer, D., Wittmann, J., Kratsch, W., &amp; Schoch, M. (2026, conditionally accepted). Let the Agents Close the Loop: Towards a GenAI-Based Multi-Agent System for Process Improvement. <em>21st International Conference on Wirtschaftsinformatik (WI)</em>, Linz.</li>
+        <li data-type="conference">Fetzer, D., Wittmann, J., Kratsch, W., &amp; Schoch, M. (2026). Let the Agents Close the Loop: Towards a GenAI-Based Multi-Agent System for Process Improvement. To be presented at the <em>21st International Conference on Wirtschaftsinformatik (WI)</em>, Linz.</li>
         <li data-type="conference">Fetzer, D., Gimpel, H., &amp; Schoch, M. (2026). Orchestrating Generative AI-Based Multi-Agent Systems for Complex Knowledge Work Automation: A Design Science Research Approach. <em>59th Hawaii International Conference on System Sciences (HICSS)</em>.</li>
         <li data-type="conference">Fetzer, D., Wittmann, J., Kratsch, W., &amp; Schoch, M. (2026). PRIME-GEN.ai: A GenAI-Based Multi-Agent Prototype for Business Process Improvement [Poster &amp; live demo]. <em>DESRIST</em>, Münster.</li>
         <li data-type="conference">Lahmer, S., Okrusch, L., Schoch, M., &amp; Gimpel, H. (2024). How Can the Problem Become Part of the Solution? Designing a Personalized Notification Support System. <em>32nd European Conference on Information Systems (ECIS)</em>, Paphos.</li>
@@ -376,6 +377,7 @@
         <li data-type="conference">Gimpel, H., Haamann, F., Schoch, M., &amp; Wittich, M. (2018). User Roles in Online Political Discussions: A Typology based on Twitter Data from the German Federal Election 2017. <em>26th ECIS</em>, Portsmouth.</li>
         <li data-type="conference">Frank, L., Gimpel, H., Schmidt, M., &amp; Schoch, M. (2017). Emergent User Roles of a Digital Workplace: A Network Analysis Based on Trace Data. <em>38th ICIS</em>, Seoul.</li>
         <li data-type="conference">Kleindienst, D., Pfleger, R., &amp; Schoch, M. (2015). The Business Alignment of Social Media Analytics. <em>23rd ECIS</em>, Münster.</li>
+        <li data-type="whitepaper">Gimpel, H., Kratsch, W., Schoch, M., &amp; Urbach, N. (2026). Coding skaliert. Denken bleibt knapp. Der Beginn der Post-Coding-Ära der Softwareentwicklung und digitalen Innovation. Diskussionspapier, Fraunhofer FIT. <a href="https://doi.org/10.17605/OSF.IO/QA578">DOI</a></li>
         <li data-type="whitepaper">Lanzl, J., Schoch, M., Jung, C., &amp; Mayer, R. (2023). New Digital Work: Die Zukunft der Arbeit im digitalen Zeitalter. Fraunhofer FIT.</li>
         <li data-type="whitepaper">Gimpel, H., Hall, K., Decker, S., Eymann, T., Lämmermann, L., Mädche, A., Röglinger, M., Ruiner, C., Schoch, M., Schoop, M., Urbach, N., &amp; Vandirk, S. (2023). Unlocking the Power of Generative AI Models and Systems such as GPT-4 and ChatGPT for Higher Education. Universität Hohenheim.</li>
         <li data-type="whitepaper">Gimpel, H., Bayer, S., Lanzl, J., Regal, C., Schäfer, R., &amp; Schoch, M. (2020). Digitale Arbeit während der COVID-19-Pandemie. Fraunhofer FIT.</li>

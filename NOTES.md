@@ -18,9 +18,9 @@
 - **Porträtfoto** (`assets/portrait.jpg`): Nutzung vom Eigentümer freigegeben (14.07.2026).
   Wasserzeichen "Bayerisches Zentrum FIM" → ggf. Bildnachweis ins Impressum. Aktuell nur
   400×400 px — höher aufgelöste Version wäre gut.
-- **AWA-Schaubild** (`assets/awa-architecture.jpg`): Fraunhofer-FIT-Material, vom
-  Projektbeteiligten bereitgestellt; Credit "Illustration: Fraunhofer FIT" steht in der
-  Caption. Formale Freigabe durch Fraunhofer im Zweifel bestätigen.
+- **AWA-Schaubild**: eigene englische SVG-Nachzeichnung (`assets/awa-architecture.svg`),
+  KEINE Kopie des Fraunhofer-Originals; Caption nennt "Own schematic, based on the AWA
+  project (Fraunhofer FIT)". Kein Freigabe-Risiko mehr.
 - **Density-Chart in Akt 3**: Eigene schematische Nachzeichnung, KEINE Kopie der
   Original-Abbildung. Paper ist Open Access (Springer, vermutlich CC BY) — Original-Figures
   könnten alternativ direkt verwendet werden, dann mit Lizenzhinweis.
@@ -36,9 +36,9 @@
     White-Paper-Beiträge inkl. forthcoming.
   - "6 journal articles (VHB A/B)": EJIS 2023 (A), I&M 2026 (B), GDN 2026 (B),
     GDN 2025 (B), SJIS forthcoming (B), CAIS 2023 (B).
-  - "12 conference papers (VHB A/B)": ECIS 2015/2018/2019/2023/2024 (5×A),
-    ICIS 2017/2022/2023 (3×A), HICSS 2023 (2×B), HICSS 2026 (B), WI 2023 (B).
-    WI 2026 (conditionally accepted) noch nicht mitgezählt → nach Annahme: 13.
+  - "13 conference papers (VHB A/B)": ECIS 2015/2018/2019/2023/2024 (5×A),
+    ICIS 2017/2022/2023 (3×A), HICSS 2023 (2×B), HICSS 2026 (B), WI 2023 (B),
+    WI 2026 (B, accepted — "to be presented").
 
 ## Offene Inhalte (TODO)
 - Knowledge Nugget 03 verlinken, sobald online.

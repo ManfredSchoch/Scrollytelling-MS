@@ -45,7 +45,7 @@ section[id] { scroll-margin-top: 4.5rem; }
 .site-header__nav a:hover { color: var(--accent); }
 
 /* ============ Opening scrollytelling ============ */
-.scrolly { position: relative; height: 400vh; background: var(--stage); }
+.scrolly { position: relative; height: 320vh; background: var(--stage); }
 .scrolly__stage {
   position: sticky; top: 0; height: 100vh; height: 100dvh;
   display: grid; place-items: center; overflow: hidden;
