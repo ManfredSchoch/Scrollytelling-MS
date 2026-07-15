@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manfred Schoch — From Crowds to Agents</title>
-<meta name="description" content="Research portfolio of Prof. Dr. Manfred Schoch: generative AI, multi-agent systems, and human agency in knowledge work.">
-<meta property="og:title" content="Manfred Schoch — From Crowds to Agents">
-<meta property="og:description" content="An interactive tour through a decade of research on collective intelligence, human–AI collaboration, and multi-agent systems.">
+<title>Manfred Schoch — Research Portfolio</title>
+<meta name="description" content="Research portfolio of Prof. Dr. Manfred Schoch: generative AI, multi-agent systems, and the human side of digital work — told as interactive research stories.">
+<meta property="og:title" content="Manfred Schoch — Research Portfolio">
+<meta property="og:description" content="Interactive research stories on collective intelligence, AI agents, and the human side of digital work.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manfredschoch.github.io/Scrollytelling-MS/">
 <meta property="og:image" content="https://manfredschoch.github.io/Scrollytelling-MS/assets/og-image.png">
@@ -21,9 +21,7 @@
 <header class="site-header">
   <a class="site-header__name" href="#top">Manfred Schoch</a>
   <nav class="site-header__nav">
-    <a href="#research">Research</a>
-    <a href="#practice">Practice</a>
-    <a href="#teaching">Teaching</a>
+    <a href="#stories">Stories</a>
     <a href="#publications">Publications</a>
     <a href="#about">About</a>
   </nav>
@@ -31,35 +29,14 @@
 
 <main id="top">
 
-  <!-- ============ OPENING SCROLLYTELLING ============ -->
-  <section class="scrolly" id="story" aria-label="Introduction">
-    <div class="scrolly__stage">
-      <svg class="scrolly__canvas" id="crowd-canvas" viewBox="0 0 800 600" role="img"
-           aria-label="Animation of a crowd of dots reorganizing into a network of AI agents"></svg>
-      <div class="scrolly__eyebrow">A research story · Manfred Schoch</div>
-      <div class="scrolly__blurbs">
-        <div class="scrolly__blurb" data-step="0">
-          <p>Generative AI is flooding organizations with ideas, drafts, and decisions.</p>
-        </div>
-        <div class="scrolly__blurb" data-step="1">
-          <p>The bottleneck is no longer <em>creating</em> — it is <em>judging</em>.</p>
-        </div>
-        <div class="scrolly__blurb" data-step="2">
-          <p>My research asks: can we orchestrate AI agents to evaluate, decide, and collaborate — <strong>without losing human agency?</strong></p>
-        </div>
-      </div>
-      <div class="scrolly__hint" aria-hidden="true">Scroll ↓</div>
-    </div>
-  </section>
-
-  <!-- ============ INTRO / STATS ============ -->
-  <section class="intro" id="research">
+  <!-- ============ HERO ============ -->
+  <section class="hub-hero">
     <div class="wrap">
-      <p class="intro__lede reveal">I am Professor of Information Systems at Esslingen University of Applied Sciences.
-      My research spans the interface of generative AI, multi-agent systems, and the transformation of
-      knowledge work: how AI agents change what organizations can automate, what digital work does to
-      the people doing it, and how universities should teach in the AI era. The story below follows one
-      thread of that portfolio — from the wisdom of crowds to the wisdom of agents.</p>
+      <p class="band__eyebrow reveal">Research portfolio · Prof. Dr. Manfred Schoch</p>
+      <h1 class="hub-hero__title reveal">I study how AI agents and humans reshape knowledge work.</h1>
+      <p class="hub-hero__sub reveal">Professor of Information Systems at Esslingen University of Applied
+      Sciences. My research spans generative AI and multi-agent systems, collective intelligence, and the
+      human side of digital work — told here as interactive research stories.</p>
       <div class="stats reveal">
         <div class="stat"><span class="stat__num" data-count="30">0</span><span class="stat__suffix">+</span>
           <span class="stat__label">peer-reviewed publications</span></div>
@@ -71,271 +48,138 @@
     </div>
   </section>
 
-  <!-- ============ CHAPTER 1 ============ -->
-  <section class="chapter" id="act-1">
-    <div class="chapter__hero">
-      <div class="chapter__hero-inner">
-        <p class="chapter__eyebrow">Act 1 · Collective intelligence</p>
-        <h2 class="chapter__title">The wisdom of <span class="oval">crowds</span></h2>
-      </div>
-    </div>
-    <div class="chapter__body wrap">
-      <p class="reveal">Long before large language models, one question drove this research: how can
-      <strong>many people together</strong> make better judgments than any individual? For wicked problems —
-      climate, health, the future of work — crowds can generate and evaluate solution ideas at scale.
-      But collective intelligence needs careful design: incentives, aggregation, and process.</p>
-      <div class="dataviz reveal" aria-label="Key findings from Idea Evaluation with Crowds and LLMs">
-        <div class="dataviz__side">
-          <h3 class="dataviz__title">Same answers, different reading</h3>
-          <p>Across four innovation contests of ascending specialization — from <em>attitudes &amp;
-          behaviors</em> to <em>energy supply</em> — we compared crowd judgments with an LLM evaluator.</p>
-          <p>Used as <strong>absolute ratings</strong> — averaging the raw scores — the LLM's judgments
-          hovered at chance level. Turned into <strong>computed rankings</strong> — relative ranks built
-          from those same scores — they kept pace with the crowd, even in the most specialized contest.
-          <strong>What you do with the answers matters more than what you ask.</strong></p>
-          <div class="dataviz__stat">
-            <span class="dataviz__num">50&nbsp;% → 80&nbsp;%</span>
-            <span class="dataviz__caption">LLM balanced accuracy: the same scores, read as averages (absolute ratings) vs. as computed rankings</span>
+  <!-- ============ STORIES ============ -->
+  <section class="band" id="stories">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">The stories</p>
+      <h2 class="band__title reveal">Three threads, one portfolio</h2>
+      <div class="story-cards reveal">
+
+        <a class="story-card" href="stories/crowds-to-agents/">
+          <div class="story-card__motif story-card__motif--crowds" aria-hidden="true">
+            <svg viewBox="0 0 300 130">
+              <g opacity="0.9">
+                <circle cx="52" cy="42" r="7" fill="#f7d774" stroke="#e5b95c"/>
+                <rect x="49" y="49" width="6" height="5" rx="1.5" fill="#8f8fa3"/>
+                <circle cx="86" cy="78" r="7" fill="#f7d774" stroke="#e5b95c"/>
+                <rect x="83" y="85" width="6" height="5" rx="1.5" fill="#8f8fa3"/>
+                <circle cx="44" cy="96" r="7" fill="#f7d774" stroke="#e5b95c"/>
+                <rect x="41" y="103" width="6" height="5" rx="1.5" fill="#8f8fa3"/>
+              </g>
+              <path d="M118 66 h44" stroke="#8f8fa3" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M156 60 l10 6 -10 6 z" fill="#8f8fa3"/>
+              <g>
+                <line x1="216" y1="36" x2="252" y2="66" stroke="#3d5bd8" stroke-width="1.6"/>
+                <line x1="216" y1="96" x2="252" y2="66" stroke="#3d5bd8" stroke-width="1.6"/>
+                <line x1="216" y1="36" x2="216" y2="96" stroke="#3d5bd8" stroke-width="1.6"/>
+                <circle cx="216" cy="36" r="9" fill="#5570e0"/>
+                <circle cx="216" cy="96" r="9" fill="#5570e0"/>
+                <circle cx="252" cy="66" r="12" fill="#d97e00"/>
+              </g>
+            </svg>
           </div>
-        </div>
-        <figure class="dataviz__chart">
-          <svg id="contests-chart" viewBox="0 0 560 340" role="img"
-               aria-label="Two schematic line charts across four contests of ascending specialization: with absolute ratings, LLM accuracy stays flat at the 50 percent chance level while the crowd starts higher; with computed rankings, the LLM matches or exceeds the crowd at 69 to 80 percent"></svg>
-          <figcaption>Schematic recreation (balanced accuracy) based on Gimpel, Laubacher, Probost, Schäfer &amp;
-          Schoch (2025, <em>Group Decision and Negotiation</em>). Contests 1→4 in ascending specialization,
-          from attitudes &amp; behaviors to energy supply.</figcaption>
-        </figure>
-      </div>
-      <blockquote class="pullquote reveal">
-        <p>Crowds can evaluate ideas for problems that overwhelm any single expert — if the inner workings of the collective are managed well.</p>
-      </blockquote>
-      <div class="cards reveal">
-        <article class="card">
-          <p class="card__venue">Communications of the AIS · 2023</p>
-          <h3 class="card__title">Managing the Inner Workings of Collective Intelligence for Wicked Problems</h3>
-          <p class="card__text">An assessment model for collective intelligence approaches — and its evaluation in practice.</p>
-          <a class="card__link" href="https://doi.org/10.17705/1CAIS.05249">Read the paper →</a>
-        </article>
-        <article class="card">
-          <p class="card__venue">Group Decision and Negotiation · 2025</p>
-          <h3 class="card__title">Idea Evaluation for Solutions to Specialized Problems</h3>
-          <p class="card__text">Leveraging the potential of crowds <em>and</em> large language models for judging ideas — the bridge into act 2.</p>
-          <a class="card__link" href="https://doi.org/10.1007/s10726-025-09935-y">Read the paper →</a>
-        </article>
-      </div>
-    </div>
-  </section>
+          <p class="card__venue">Story 01 · Live</p>
+          <h3 class="card__title">From Crowds to Agents</h3>
+          <p class="card__text">How idea evaluation moved from human crowds to human–AI collaboration to
+          orchestrated AI agents — in three acts, with the data to back it up.</p>
+          <span class="card__link">Read the story →</span>
+        </a>
 
-  <!-- ============ CHAPTER 2 ============ -->
-  <section class="chapter" id="act-2">
-    <div class="chapter__hero">
-      <div class="chapter__hero-inner">
-        <p class="chapter__eyebrow">Act 2 · Human–AI collaboration</p>
-        <h2 class="chapter__title">Humans <span class="oval">+&nbsp;AI</span>: hybrid judgment</h2>
-      </div>
-    </div>
-    <div class="chapter__body wrap">
-      <p class="reveal">Generative AI turned the crowd's toolkit upside down: suddenly the machine ideates and
-      evaluates alongside us. In a controlled lab study we watched people solve creative tasks with GenAI
-      and analyzed their prompting: whether the partnership pays off depends on <strong>AI literacy</strong> —
-      and on which kind of thinking the task demands. Human judgment does not disappear; it moves up the stack.</p>
-      <div class="dataviz reveal" aria-label="Key findings from Prompting for Creativity">
-        <div class="dataviz__side">
-          <h3 class="dataviz__title">Where AI literacy pays off</h3>
-          <p>In <strong>divergent</strong> tasks — generating ideas — GenAI levels the playing field:
-          effects of AI literacy are mixed, and performance differences flatten out.</p>
-          <p>In <strong>convergent</strong> tasks — selecting and refining — <strong>AI literacy decides</strong>,
-          because convergence requires sophisticated prompting. The steepest gains go to people with
-          <em>lower</em> individual creativity: skilled prompting lets them close the gap. And it takes
-          <strong>human–AI co-creation</strong>, not AI alone, to turn that capability into performance.</p>
-        </div>
-        <figure class="dataviz__chart">
-          <svg id="slopes-chart" viewBox="0 0 560 360" role="img"
-               aria-label="Two schematic line charts: for divergent thinking, performance lines by individual creativity cross with no consistent effect of AI literacy; for convergent thinking, performance rises steeply with AI literacy for people with low individual creativity"></svg>
-          <figcaption>Schematic recreation of the simple-slopes analysis in Endres, Kreuzer, Schoch &amp;
-          Schöttl (forthcoming, <em>Scandinavian Journal of Information Systems</em>).</figcaption>
-        </figure>
-      </div>
-      <blockquote class="pullquote reveal">
-        <p>For brainstorming, AI levels the playing field. For deciding, human judgment makes the difference.</p>
-      </blockquote>
-      <div class="cards reveal">
-        <article class="card">
-          <p class="card__venue">Scandinavian Journal of Information Systems · forthcoming</p>
-          <h3 class="card__title">Prompting for Creativity</h3>
-          <p class="card__text">Human–AI decision making and the role of AI literacy in divergent and convergent thinking.</p>
-        </article>
-        <article class="card">
-          <p class="card__venue">Journal of Information Systems Education · 2025</p>
-          <h3 class="card__title">Using Generative AI in Higher Education</h3>
-          <p class="card__text">A guide for instructors — where hybrid judgment meets the classroom (see <a href="#teaching">Teaching</a>).</p>
-          <a class="card__link" href="https://doi.org/10.62273/QLLG7172">Read the paper →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CHAPTER 3 (FLAGSHIP) ============ -->
-  <section class="chapter chapter--flagship" id="act-3">
-    <div class="chapter__hero">
-      <div class="chapter__hero-inner">
-        <p class="chapter__eyebrow">Act 3 · Multi-agent systems</p>
-        <h2 class="chapter__title">The crowd <span class="oval">without</span> people</h2>
-      </div>
-    </div>
-    <div class="chapter__body wrap">
-      <p class="reveal">What if the crowd itself were made of AI agents? We built single-agent and multi-agent
-      LLM systems of various sizes and let them judge the quality of real ideas. The result mirrors a century
-      of collective-intelligence research — <strong>the wisdom of the crowd works for AI, too.</strong></p>
-
-      <div class="dataviz reveal" aria-label="Key findings from The Crowd Without People">
-        <div class="dataviz__side">
-          <h3 class="dataviz__title">Wisdom of the crowd, silicon edition</h3>
-          <p>Single LLMs systematically <strong>overestimate idea quality</strong> compared to human judgment.
-          But orchestrate a <strong>diverse set of agents with structured collaboration</strong> — heterogeneous
-          agents, coordinated by a facilitator — and the collective comes remarkably close to human experts.</p>
-          <div class="dataviz__stat">
-            <span class="dataviz__num" id="rho">ρ = 0.76</span>
-            <span class="dataviz__caption">alignment of the collaborative multi-agent system with human expert ratings</span>
+        <div class="story-card story-card--soon">
+          <div class="story-card__motif story-card__motif--agentic" aria-hidden="true">
+            <svg viewBox="0 0 300 130">
+              <!-- orchestrator -->
+              <circle cx="150" cy="32" r="17" fill="#0f766e"/>
+              <circle cx="144" cy="29" r="2.6" fill="#ffffff"/>
+              <circle cx="156" cy="29" r="2.6" fill="#ffffff"/>
+              <rect x="143" y="37" width="14" height="3.4" rx="1.7" fill="#ffffff" opacity="0.9"/>
+              <!-- delegation arrows -->
+              <line x1="136" y1="46" x2="82" y2="82" stroke="#0f766e" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M86 84 l-9 2 5 -8 z" fill="#0f766e"/>
+              <line x1="150" y1="51" x2="150" y2="84" stroke="#0f766e" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M150 90 l-4.5 -8 h9 z" fill="#0f766e"/>
+              <line x1="164" y1="46" x2="218" y2="82" stroke="#0f766e" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M214 84 l9 2 -5 -8 z" fill="#0f766e"/>
+              <!-- worker agents -->
+              <g stroke="#0f766e" stroke-width="2.2">
+                <circle cx="74" cy="99" r="14" fill="rgba(15,118,110,0.14)"/>
+                <circle cx="150" cy="103" r="14" fill="rgba(15,118,110,0.14)"/>
+                <circle cx="226" cy="99" r="14" fill="rgba(15,118,110,0.14)"/>
+              </g>
+              <g fill="#0f766e">
+                <circle cx="69" cy="96" r="2.4"/><circle cx="79" cy="96" r="2.4"/>
+                <circle cx="145" cy="100" r="2.4"/><circle cx="155" cy="100" r="2.4"/>
+                <circle cx="221" cy="96" r="2.4"/><circle cx="231" cy="96" r="2.4"/>
+              </g>
+              <g fill="#0f766e" opacity="0.85">
+                <rect x="65" y="102" width="18" height="3" rx="1.5"/>
+                <rect x="141" y="106" width="18" height="3" rx="1.5"/>
+                <rect x="217" y="102" width="18" height="3" rx="1.5"/>
+              </g>
+            </svg>
           </div>
+          <p class="card__venue">Story 02 · In the making</p>
+          <h3 class="card__title">Orchestrating the Agentic Enterprise</h3>
+          <p class="card__text">Design knowledge for building and steering GenAI multi-agent systems in
+          practice: orchestration choices between control and autonomy, and agile agent development.</p>
+          <span class="badge-soon">Coming soon</span>
         </div>
-        <figure class="dataviz__chart">
-          <svg id="density-chart" viewBox="0 0 560 320" role="img"
-               aria-label="Schematic chart: rating distribution of a single LLM is shifted toward higher scores than human ratings; a collaborative multi-agent system aligns closely with human judgment"></svg>
-          <figcaption>Schematic recreation based on the open-access article (Probost, Schoch, et&nbsp;al., 2026).</figcaption>
-        </figure>
-      </div>
 
-      <blockquote class="pullquote reveal">
-        <p>Agent heterogeneity and structured collaboration unlock collective intelligence effects that go beyond what stronger individual models achieve.</p>
-      </blockquote>
+        <div class="story-card story-card--soon">
+          <div class="story-card__motif story-card__motif--human" aria-hidden="true">
+            <svg viewBox="0 0 300 130">
+              <!-- person -->
+              <circle cx="66" cy="46" r="15" fill="rgba(109,74,166,0.16)" stroke="#6d4aa6" stroke-width="2.4"/>
+              <path d="M40 98 q26 -30 52 0 z" fill="rgba(109,74,166,0.16)" stroke="#6d4aa6" stroke-width="2.4" stroke-linejoin="round"/>
+              <!-- exchange between human and system -->
+              <line x1="106" y1="58" x2="146" y2="58" stroke="#6d4aa6" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M152 58 l-8 -4.5 v9 z" fill="#6d4aa6"/>
+              <line x1="146" y1="76" x2="106" y2="76" stroke="#6d4aa6" stroke-width="2" stroke-dasharray="5 4"/>
+              <path d="M100 76 l8 -4.5 v9 z" fill="#6d4aa6"/>
+              <!-- screen with digital trace -->
+              <rect x="158" y="30" width="112" height="70" rx="10" fill="rgba(109,74,166,0.10)" stroke="#6d4aa6" stroke-width="2.4"/>
+              <path d="M170 78 h18 l8 -22 10 32 9 -19 6 9 h30" fill="none" stroke="#6d4aa6" stroke-width="2.6" stroke-linejoin="round"/>
+              <circle cx="251" cy="78" r="3.6" fill="#6d4aa6"/>
+              <line x1="200" y1="100" x2="228" y2="100" stroke="#6d4aa6" stroke-width="2.4"/>
+              <line x1="214" y1="100" x2="214" y2="108" stroke="#6d4aa6" stroke-width="2.4"/>
+            </svg>
+          </div>
+          <p class="card__venue">Story 03 · In the making</p>
+          <h3 class="card__title">The Human Side of Digital Work</h3>
+          <p class="card__text">How organizations bring AI and digital technology to their entire
+          workforce: change management, digital trace data analysis — from workplace tools to AI
+          agents — and interventions that take people's difficulties and fears seriously.</p>
+          <span class="badge-soon">Coming soon</span>
+        </div>
 
-      <div class="cards cards--three reveal">
-        <article class="card card--highlight">
-          <p class="card__venue">Group Decision and Negotiation · 2026 · Open Access</p>
-          <h3 class="card__title">The Crowd Without People: Multi-agent LLMs as Idea Evaluators</h3>
-          <p class="card__text">Multiple LLMs beat a single model; diversity and collaboration add value beyond scale.</p>
-          <a class="card__link" href="https://doi.org/10.1007/s10726-026-09993-w">Read the paper →</a>
-        </article>
-        <article class="card">
-          <p class="card__venue">HICSS · 2026</p>
-          <h3 class="card__title">Orchestrating GenAI-Based Multi-Agent Systems for Complex Knowledge Work</h3>
-          <p class="card__text">A design science approach: a morphological box of orchestration options and four propositions for steering agent teams — instead of trial-and-error.</p>
-        </article>
-        <article class="card">
-          <p class="card__venue">WI · 2026 &amp; DESRIST · 2026</p>
-          <h3 class="card__title">Let the Agents Close the Loop / PRIME-GEN.ai</h3>
-          <p class="card__text">A GenAI-based multi-agent prototype for business process improvement — live-demoed at DESRIST.</p>
-        </article>
-      </div>
-
-      <p class="chapter__outlook reveal"><strong>Current work:</strong> how to balance
-      <em>human agency and system autonomy</em> when orchestrating multi-agent systems — the question that
-      connects all three acts, and the one I care about most.</p>
-    </div>
-  </section>
-
-  <!-- ============ PRACTICE ============ -->
-  <section class="band" id="practice">
-    <div class="wrap">
-      <p class="band__eyebrow reveal">From lab to practice</p>
-      <h2 class="band__title reveal">Agentic Work Automation (AWA)</h2>
-      <p class="reveal">Generative AI opens new ways to automate complex knowledge work. GenAI-based
-      <strong>multi-agent systems</strong> go a step further: several specialized agents work together,
-      coordinate tasks, and support people in complex processes — an enormous potential for productivity,
-      quality, and new forms of collaboration, especially against the backdrop of skilled-labor shortage.
-      In the <a href="https://www.wi.fit.fraunhofer.de/de/projekte/oeffentliche-projekte/Agentic-Work-Automation.html">AWA
-      research project</a> at the Fraunhofer FIT Institute Branch Information Systems, where I co-lead a
-      research group, we develop and test such systems along concrete industry use cases.</p>
-      <figure class="figure reveal">
-        <img src="assets/awa-architecture.svg" loading="lazy" width="1000" height="505"
-             alt="Schematic: a workflow step is handled by a multi-agent system of coordinated agents connected to external data sources and tools; each agent perceives, remembers, and acts on top of a foundation model, embedded in the enterprise environment">
-        <figcaption>How a GenAI-based multi-agent system is embedded in an organization: one workflow
-        step is handled by coordinated specialist agents, and each agent perceives, remembers, and acts
-        on top of a foundation model. Own schematic, based on the AWA project (Fraunhofer&nbsp;FIT).</figcaption>
-      </figure>
-      <p class="reveal">The project distills scientific and practical guidance along three phases —
-      and publishes it as compact <strong>“Knowledge Nuggets”</strong> for practitioners:</p>
-      <ol class="phases reveal">
-        <li><strong>Define</strong> — goals, requirements, and use cases for GenAI-based multi-agent systems</li>
-        <li><strong>Build</strong> — architecture and implementation</li>
-        <li><strong>Run</strong> — steering, quality, and traceability</li>
-      </ol>
-      <div class="cards cards--three reveal">
-        <article class="card">
-          <p class="card__venue">Knowledge Nugget · 01</p>
-          <h3 class="card__title">Chatbots, Agents, Multi-Agent Systems</h3>
-          <p class="card__text">What AI agents and multi-agent systems actually are — a map of the terrain.</p>
-          <a class="card__link" href="https://www.wi.fit.fraunhofer.de/content/dam/fit/witschaftsinformatik/dokumente/01_AWA_Chatbot-Agents-MAS.pdf">Read the nugget (PDF, German) →</a>
-        </article>
-        <article class="card">
-          <p class="card__venue">Knowledge Nugget · 02</p>
-          <h3 class="card__title">When a Multi-Agent System Makes Sense</h3>
-          <p class="card__text">Multi-agent vs. single-agent: a decision guide for real-world automation.</p>
-          <a class="card__link" href="https://www.wi.fit.fraunhofer.de/content/dam/fit/witschaftsinformatik/dokumente/Wann-ein-Multi-Agenten-System-sinnvoll-ist.pdf">Read the nugget (PDF, German) →</a>
-        </article>
-        <article class="card">
-          <p class="card__venue">Knowledge Nugget · 03</p>
-          <h3 class="card__title">Agile Development of GenAI Agents</h3>
-          <p class="card__text">Probabilistic agents break Scrum's assumptions: how to adapt backlog items,
-          acceptance criteria, and the Definition of Done — companion to our HMD article. <em>Coming soon.</em></p>
-        </article>
-      </div>
-      <p class="band__note reveal">Project partners: Fraunhofer FIT, Ancud IT-Beratung, DATEV, soffico,
-      and Brauerei Gebr. Maisel, plus associated partners.</p>
-      <p class="band__cta reveal">Interested in talks, joint projects, or applied research on AI agents?
-        <a href="#about">Get in touch.</a></p>
-    </div>
-  </section>
-
-  <!-- ============ TEACHING ============ -->
-  <section class="band band--alt" id="teaching">
-    <div class="wrap">
-      <p class="band__eyebrow reveal">Teaching &amp; academic leadership</p>
-      <h2 class="band__title reveal">Teaching the AI generation</h2>
-      <p class="reveal">As head of the Central Academic Institution for Digital Transformation in Study and
-      Teaching at Esslingen University, I work on bringing AI into the classroom responsibly — from
-      organizing the university-wide <strong>Cyberweek</strong> to building new course formats around
-      generative AI.</p>
-      <div class="cards cards--three reveal">
-        <article class="card">
-          <p class="card__venue">Lecture</p>
-          <h3 class="card__title">Solution Architecture</h3>
-          <p class="card__text">A semester-long arc from AI and Python fundamentals through generative and
-          agentic AI to architecture principles and hands-on prototyping: student teams identify AI use
-          cases, pitch them, and build them — vibe coding included.</p>
-        </article>
-        <article class="card">
-          <p class="card__venue">Cyberweek workshop</p>
-          <h3 class="card__title">Vibe Coding: From Creativity to AI Prototype</h3>
-          <p class="card__text">Creative methods to find smart AI use cases in the morning; in the
-          afternoon, steering AI assistants in natural language to turn the concept into running
-          code — deliberately without needing to understand the code behind it. One day, one working
-          AI prototype.</p>
-        </article>
-        <article class="card">
-          <p class="card__venue">Guides · 2023 / 2025</p>
-          <h3 class="card__title">Generative AI in Higher Education</h3>
-          <p class="card__text">Co-author of widely used guides for students and instructors on using GenAI in university teaching.</p>
-          <a class="card__link" href="https://doi.org/10.62273/QLLG7172">Instructor guide →</a>
-        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ SECOND STRAND ============ -->
-  <section class="band" id="beyond">
-    <div class="wrap">
-      <p class="band__eyebrow reveal">Beyond agents</p>
-      <h2 class="band__title reveal">Digital work, technostress &amp; time</h2>
-      <p class="reveal">A second strand of my research studies the human side of digital work over time:
-      how IT use creates stress and time poverty, how people cope, and which interventions help —
-      published in outlets such as the <em>European Journal of Information Systems</em> and
-      <em>Information &amp; Management</em>. One example: the timing of misinformation warnings decides
-      their effect. Shown <em>after</em> a false message, a warning makes people pause and reflect; shown
-      <em>before</em>, it is processed in passive “scroll mode” — and two weeks later, users tend to
-      remember the misinformation as true. If act 3 asks what agents can do, this strand asks what
-      constant connectivity does to us.</p>
+  <!-- ============ ABOUT / CONTACT ============ -->
+  <section class="about" id="about">
+    <div class="wrap about__grid">
+      <img class="about__photo reveal" src="assets/portrait.jpg" alt="Portrait of Manfred Schoch" width="400" height="400">
+      <div class="about__text reveal">
+        <h2 class="band__title">About me</h2>
+        <p><strong>Prof. Dr. Manfred Schoch</strong></p>
+        <ul class="about__roles">
+          <li>Professor of Information Systems, Esslingen University of Applied Sciences</li>
+          <li>Head, Central Academic Institution for Digital Transformation in Study and Teaching</li>
+          <li>Co-Head of Research Group, Fraunhofer FIT Institute Branch Information Systems</li>
+          <li>Director, FIM Research Center for Information Management</li>
+          <li>Member of the working group “Information Systems at Universities of Applied Sciences”
+          of Die Wirtschaftsinformatik e.&nbsp;V.</li>
+        </ul>
+        <p>I teach Solution Architecture, Business Process Management, Data Analytics, a Vibe Coding &amp;
+        Creativity workshop, and I organize the university-wide Cyberweek — each story features the
+        teaching that belongs to it.</p>
+        <p class="about__links">
+          <a href="mailto:manfred.schoch@hs-esslingen.de">E-mail</a> ·
+          <a href="https://www.linkedin.com/in/manfred-schoch-42257877">LinkedIn</a> ·
+          <a href="https://scholar.google.com/citations?user=WTYQ880AAAAJ&amp;hl=en">Google Scholar</a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -387,30 +231,6 @@
     </div>
   </section>
 
-  <!-- ============ ABOUT / CONTACT ============ -->
-  <section class="about" id="about">
-    <div class="wrap about__grid">
-      <img class="about__photo reveal" src="assets/portrait.jpg" alt="Portrait of Manfred Schoch" width="400" height="400">
-      <div class="about__text reveal">
-        <h2 class="band__title">About me</h2>
-        <p><strong>Prof. Dr. Manfred Schoch</strong></p>
-        <ul class="about__roles">
-          <li>Professor of Information Systems, Esslingen University of Applied Sciences</li>
-          <li>Head, Central Academic Institution for Digital Transformation in Study and Teaching</li>
-          <li>Co-Head of Research Group, Fraunhofer FIT Institute Branch Information Systems</li>
-          <li>Director, FIM Research Center for Information Management</li>
-          <li>Member of the working group “Information Systems at Universities of Applied Sciences”
-          of Die Wirtschaftsinformatik e.&nbsp;V.</li>
-        </ul>
-        <p class="about__links">
-          <a href="mailto:manfred.schoch@hs-esslingen.de">E-mail</a> ·
-          <a href="https://www.linkedin.com/in/manfred-schoch-42257877">LinkedIn</a> ·
-          <a href="https://scholar.google.com/citations?user=WTYQ880AAAAJ&amp;hl=en">Google Scholar</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
@@ -420,6 +240,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/shared.js"></script>
 </body>
 </html>

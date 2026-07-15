@@ -235,6 +235,44 @@ section[id] { scroll-margin-top: 4.5rem; }
 .site-footer a { color: #c9c9dc; }
 .site-footer p { margin: 0.3rem 0; }
 
+/* ============ Landing (hub) ============ */
+.hub-hero { padding: 9.5rem 0 4.5rem; }
+.hub-hero__title {
+  margin: 0 0 1.4rem; max-width: 22ch;
+  font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 800; line-height: 1.06;
+  letter-spacing: -0.015em; text-wrap: balance;
+}
+.hub-hero__sub { max-width: var(--measure); font-size: 1.15rem; color: var(--ink-soft); }
+
+.story-cards { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); margin-top: 2.6rem; }
+.story-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  padding: 0 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+  text-decoration: none; color: var(--ink); position: relative; overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+a.story-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(21,21,29,0.12); }
+a.story-card:hover .card__link { text-decoration: underline; }
+.story-card__motif {
+  margin: 0 -1.5rem 0.8rem; padding: 1rem 1rem 0.4rem;
+  background: var(--paper-deep); border-bottom: 1px solid var(--line);
+}
+.story-card__motif svg { width: 100%; height: auto; display: block; }
+/* per-story color presence (echoes each story's accent world) */
+.story-card__motif--crowds { background: var(--stage); }
+.story-card__motif--agentic { background: rgba(15,118,110,0.09); border-bottom-color: rgba(15,118,110,0.25); }
+.story-card__motif--human { background: rgba(109,74,166,0.09); border-bottom-color: rgba(109,74,166,0.25); }
+.story-card:nth-child(1) .card__venue { color: #d97e00; }
+.story-card:nth-child(2) .card__venue { color: #0f766e; }
+.story-card:nth-child(3) .card__venue { color: #6d4aa6; }
+.story-card--soon { opacity: 0.88; }
+.badge-soon {
+  align-self: flex-start; margin-top: 0.3rem;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); background: var(--paper-deep);
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem;
+}
+
 /* ============ Reveal animation ============ */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.in-view { opacity: 1; transform: none; }

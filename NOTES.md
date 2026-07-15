@@ -9,10 +9,22 @@
 - Das öffentliche Repo enthält NUR die Website. Forschungsnotizen/Vault bleiben im
   privaten Hermes-Repo.
 
+## Struktur (seit Hub-Umbau, Phase 1)
+- `/` = Landingpage (Persona: Hero, Story-Kacheln, About, Publikationsliste).
+- `/stories/crowds-to-agents/` = Story 1. Weitere Stories folgen als
+  `/stories/<slug>/` (Pläne unter `content/plans/`).
+- JS: `js/shared.js` (alle Seiten) + `js/story-<slug>.js` (je Story).
+- CSS: ein gemeinsames `css/style.css`; Story-spezifische Akzente können später als
+  eigene Variablen-Overrides ergänzt werden (Story 2: Teal, Story 3: warmes Rot —
+  Motiv-Farben der Landing-Kacheln).
+- Doppelungs-Regel: Publikationsliste, About und Kontakt wohnen NUR auf der Landing.
+
 ## Content-Workflow
-- **`content.md` ist die Single Source of Truth für alle Website-Texte.** Dort direkt
-  editieren (auch im GitHub-Web-Editor), dann "sync content" sagen — Claude überträgt
-  die Änderungen nach `index.html`.
+- **`content/landing.md` und `content/story-*.md` sind die Single Source of Truth
+  für alle Website-Texte.** Dort direkt editieren (auch im GitHub-Web-Editor), dann
+  "sync content" sagen — Claude überträgt die Änderungen ins HTML.
+- Phasenstatus: Phase 1 (Hub + Story 1) umgesetzt. Phase 2 (Story 2, Input liegt in
+  `content/plans/story-agentic-enterprise.md`) und Phase 3 (Story 3) offen.
 
 ## Zur Prüfung geflaggt (Urheberrecht / Freigaben)
 - **Porträtfoto** (`assets/portrait.jpg`): Nutzung vom Eigentümer freigegeben (14.07.2026).
