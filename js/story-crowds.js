@@ -6,26 +6,6 @@
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var SVGNS = "http://www.w3.org/2000/svg";
 
-/* ---------- Chapter hero: oval draw ---------- */
-  document.querySelectorAll(".oval").forEach(function (span) {
-    var svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("class", "oval-ring");
-    svg.setAttribute("viewBox", "0 0 100 60");
-    svg.setAttribute("preserveAspectRatio", "none");
-    var el = document.createElementNS(SVGNS, "ellipse");
-    el.setAttribute("cx", "50"); el.setAttribute("cy", "30");
-    el.setAttribute("rx", "48"); el.setAttribute("ry", "27");
-    el.setAttribute("vector-effect", "non-scaling-stroke");
-    svg.appendChild(el);
-    span.appendChild(svg);
-  });
-  var heroObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in-view"); heroObserver.unobserve(e.target); }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll(".chapter__hero").forEach(function (el) { heroObserver.observe(el); });
-
   /* ---------- Opening scrollytelling: crowd -> agent network ---------- */
   var scrolly = document.querySelector(".scrolly");
   var canvas = document.getElementById("crowd-canvas");

@@ -1,6 +1,7 @@
 # Content-Plan: Story 2 — "Orchestrating the Agentic Enterprise" (Phase 2)
 
-Status: Input gesammelt (14.07.2026), Umsetzung noch nicht gestartet.
+Status: UMGESETZT (16.07.2026) — finale Texte in content/story-agentic-enterprise.md.
+Diese Datei bleibt als Material-Archiv (z. B. für die andockbaren Cases nach Annahme).
 Kachel-Text auf der Landing: ohne "AWA" (versteht niemand) — stattdessen
 "agile agent development" nennen; AWA wird erst IN der Story eingeführt.
 Charakter: **gestaltungsorientierte Forschung** (Design Science) — kaum quantitative

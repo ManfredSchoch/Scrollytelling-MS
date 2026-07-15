@@ -20,6 +20,26 @@
   }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
   document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
 
+/* ---------- Chapter hero: oval draw ---------- */
+  document.querySelectorAll(".oval").forEach(function (span) {
+    var svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("class", "oval-ring");
+    svg.setAttribute("viewBox", "0 0 100 60");
+    svg.setAttribute("preserveAspectRatio", "none");
+    var el = document.createElementNS(SVGNS, "ellipse");
+    el.setAttribute("cx", "50"); el.setAttribute("cy", "30");
+    el.setAttribute("rx", "48"); el.setAttribute("ry", "27");
+    el.setAttribute("vector-effect", "non-scaling-stroke");
+    svg.appendChild(el);
+    span.appendChild(svg);
+  });
+  var heroObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in-view"); heroObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll(".chapter__hero").forEach(function (el) { heroObserver.observe(el); });
+
   /* ---------- Stat counters ---------- */
   function animateCount(el) {
     var target = parseInt(el.getAttribute("data-count"), 10);

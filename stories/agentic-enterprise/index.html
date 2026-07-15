@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orchestrating the Agentic Enterprise — Manfred Schoch</title>
+<meta name="description" content="Design knowledge for building and steering GenAI multi-agent systems: orchestration choices between control and autonomy, agile agent development, and the AWA research project.">
+<meta property="og:title" content="Orchestrating the Agentic Enterprise — Manfred Schoch">
+<meta property="og:description" content="How much autonomy do you grant AI agents — and how do you stay in control? A research story on orchestrating multi-agent systems.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://manfredschoch.github.io/Scrollytelling-MS/stories/agentic-enterprise/">
+<meta property="og:image" content="https://manfredschoch.github.io/Scrollytelling-MS/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="story-agentic">
+
+<header class="site-header">
+  <a class="site-header__name" href="../../">← Manfred Schoch</a>
+  <nav class="site-header__nav">
+    <a href="#act-1">The story</a>
+    <a href="#practice">Practice</a>
+    <a href="#teaching">Teaching</a>
+    <a href="../../#publications">Publications</a>
+    <a href="../../#stories">All stories</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ OPENING SCROLLYTELLING ============ -->
+  <section class="scrolly" id="story" aria-label="Introduction">
+    <div class="scrolly__stage">
+      <svg class="scrolly__canvas" id="pipeline-canvas" viewBox="0 0 800 600" role="img"
+           aria-label="Animation of a rigid process pipeline dissolving into an adaptive network of AI agents around an orchestrator"></svg>
+      <div class="scrolly__eyebrow">A research story · Manfred Schoch</div>
+      <div class="scrolly__blurbs">
+        <div class="scrolly__blurb" data-step="0">
+          <p>For decades, automating work meant: software does exactly what we specify — <em>nothing more</em>.</p>
+        </div>
+        <div class="scrolly__blurb" data-step="1">
+          <p>GenAI agents are different: they plan, delegate, and improvise.</p>
+        </div>
+        <div class="scrolly__blurb" data-step="2">
+          <p>The design question of the decade: <strong>how much autonomy do we grant them — and how do we stay in control?</strong></p>
+        </div>
+      </div>
+      <div class="scrolly__hint" aria-hidden="true">Scroll ↓</div>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section class="intro" id="research">
+    <div class="wrap">
+      <p class="intro__lede reveal">GenAI-based multi-agent systems can automate knowledge work that
+      scripted automation never could. But building them well is a design discipline, not trial and
+      error. This story walks through the design knowledge we develop between research and industry
+      practice — from orchestration choices to agile agent development.</p>
+    </div>
+  </section>
+
+  <!-- ============ ACT 1 ============ -->
+  <section class="chapter" id="act-1">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 1 · The design space</p>
+        <h2 class="chapter__title">Orchestration is a <span class="oval">choice</span></h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">In practice, most agent systems are built the same way: try something, see what
+      happens, patch it. Our design science research systematizes what is actually being decided when
+      you build a multi-agent system — three interlocking design areas, sitting between IT governance
+      above and technical implementation below.</p>
+      <figure class="figure reveal">
+        <svg viewBox="0 0 900 360" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="Framework: GenAI-based MAS orchestration consists of coordinated task representation, delegation mechanisms, and agent architectures — framed by IT governance above and technical implementation below">
+          <rect x="30" y="20" width="840" height="52" rx="10" fill="none" stroke="#8f8fa3" stroke-width="1.6" stroke-dasharray="7 5"/>
+          <text x="450" y="52" text-anchor="middle" font-size="16" fill="#4a4a58">IT governance</text>
+          <g stroke="#8f8fa3" stroke-width="1.8">
+            <line x1="180" y1="72" x2="180" y2="104"/><line x1="450" y1="72" x2="450" y2="104"/><line x1="720" y1="72" x2="720" y2="104"/>
+          </g>
+          <g fill="#8f8fa3">
+            <path d="M180 110 l-5 -9 h10 z"/><path d="M450 110 l-5 -9 h10 z"/><path d="M720 110 l-5 -9 h10 z"/>
+          </g>
+          <rect x="30" y="112" width="840" height="150" rx="12" fill="rgba(15,118,110,0.05)" stroke="#0f766e" stroke-width="2" stroke-dasharray="9 6"/>
+          <text x="450" y="246" text-anchor="middle" font-size="15.5" font-weight="700" fill="#0f766e">GenAI-based MAS orchestration</text>
+          <g>
+            <rect x="55" y="130" width="240" height="88" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+            <text x="175" y="158" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">Coordinated task</text>
+            <text x="175" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">representation</text>
+            <text x="175" y="200" text-anchor="middle" font-size="12.5" fill="#4a4a58">translating the workflow into the MAS</text>
+            <rect x="330" y="130" width="240" height="88" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+            <text x="450" y="158" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">Delegation</text>
+            <text x="450" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">mechanisms</text>
+            <text x="450" y="200" text-anchor="middle" font-size="12.5" fill="#4a4a58">who may hand off what to whom</text>
+            <rect x="605" y="130" width="240" height="88" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+            <text x="725" y="158" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">Agent</text>
+            <text x="725" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#15151d">architectures</text>
+            <text x="725" y="200" text-anchor="middle" font-size="12.5" fill="#4a4a58">designing the individual agents</text>
+          </g>
+          <g stroke="#0f766e" stroke-width="1.8">
+            <line x1="298" y1="174" x2="327" y2="174"/><line x1="573" y1="174" x2="602" y2="174"/>
+          </g>
+          <g fill="#0f766e">
+            <path d="M300 174 l8 -4.5 v9 z"/><path d="M325 174 l-8 -4.5 v9 z"/>
+            <path d="M575 174 l8 -4.5 v9 z"/><path d="M600 174 l-8 -4.5 v9 z"/>
+          </g>
+          <g stroke="#8f8fa3" stroke-width="1.8">
+            <line x1="180" y1="262" x2="180" y2="294"/><line x1="450" y1="262" x2="450" y2="294"/><line x1="720" y1="262" x2="720" y2="294"/>
+          </g>
+          <g fill="#8f8fa3">
+            <path d="M180 300 l-5 -9 h10 z"/><path d="M450 300 l-5 -9 h10 z"/><path d="M720 300 l-5 -9 h10 z"/>
+          </g>
+          <rect x="30" y="302" width="840" height="46" rx="10" fill="none" stroke="#8f8fa3" stroke-width="1.6" stroke-dasharray="7 5"/>
+          <text x="450" y="331" text-anchor="middle" font-size="16" fill="#4a4a58">Technical implementation</text>
+        </svg>
+        <figcaption>The design phase of GenAI-based multi-agent systems. Own schematic based on our
+        HICSS 2026 paper.</figcaption>
+      </figure>
+      <blockquote class="pullquote reveal">
+        <p>Stop building agent teams by trial and error — make orchestration an explicit design decision.</p>
+      </blockquote>
+      <div class="cards reveal">
+        <article class="card card--highlight">
+          <p class="card__venue">HICSS · 2026 · Open Access</p>
+          <h3 class="card__title">Orchestrating GenAI-Based Multi-Agent Systems for Complex Knowledge Work Automation</h3>
+          <p class="card__text">A design science research approach: a morphological box of orchestration
+          options and four propositions for steering agent teams.</p>
+          <a class="card__link" href="https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/4d6fa4a9-9727-41fc-a479-1f299d56f5e4/content">Read the paper →</a>
+        </article>
+        <article class="card">
+          <p class="card__venue">Current work</p>
+          <h3 class="card__title">Balancing human agency and system autonomy</h3>
+          <p class="card__text">The next step: how orchestration keeps humans meaningfully in charge as
+          agent systems become more capable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACT 2 (FLAGSHIP) ============ -->
+  <section class="chapter" id="act-2">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 2 · Control ⟷ Autonomy</p>
+        <h2 class="chapter__title">Where do you set the <span class="oval">dial</span>?</h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">Every orchestration decision sits somewhere on a spectrum between full control
+      and full autonomy. Our morphological box maps eleven such design dimensions. Try three of them —
+      drag the dial and watch how the same system changes character:</p>
+
+      <div class="spectrum reveal" aria-label="Interactive control-autonomy spectrum">
+        <div class="spectrum__head">
+          <span class="spectrum__pole">Control</span>
+          <input type="range" id="spectrum-slider" min="0" max="100" value="0" step="1"
+                 aria-label="Position on the control-autonomy spectrum">
+          <span class="spectrum__pole">Autonomy</span>
+        </div>
+        <div class="spectrum__rows" id="spectrum-rows"></div>
+        <p class="spectrum__summary" id="spectrum-summary"></p>
+        <p class="spectrum__caption">Three of eleven design dimensions from the morphological box in our
+        HICSS 2026 paper (one per design area: task representation, agent architectures, delegation
+        mechanisms).</p>
+      </div>
+
+      <blockquote class="pullquote reveal">
+        <p>More autonomy shifts control from design time to run time — from prescribing behavior to observing it.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ ACT 3 ============ -->
+  <section class="chapter" id="act-3">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 3 · Agile agent development</p>
+        <h2 class="chapter__title">When Scrum meets <span class="oval">probabilistic</span> software</h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">Agile development assumes you can specify what "done" looks like. GenAI agents
+      break that assumption: they behave probabilistically, respond to context, and change under the
+      hood when models update. In development projects and expert interviews we mapped where exactly
+      the friction appears in a Scrum cycle — and what to do about it.</p>
+
+      <figure class="figure reveal scrum-fig">
+        <svg viewBox="0 0 1060 250" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="A Scrum cycle from business requirements through product backlog, sprint backlog, sprint, increment, sprint review, and retrospective — with four numbered challenge markers where GenAI agents break the process">
+          <defs>
+            <marker id="sarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="#4a4a58"/>
+            </marker>
+          </defs>
+          <g font-size="13.5" fill="#15151d">
+            <rect x="15" y="105" width="128" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="79" y="127" text-anchor="middle">Business</text>
+            <text x="79" y="144" text-anchor="middle">requirements</text>
+            <rect x="175" y="105" width="112" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="231" y="127" text-anchor="middle">Product</text>
+            <text x="231" y="144" text-anchor="middle">backlog</text>
+            <rect x="330" y="105" width="118" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="389" y="127" text-anchor="middle">Sprint backlog</text>
+            <text x="389" y="144" text-anchor="middle" font-size="11" fill="#4a4a58">acceptance criteria</text>
+            <rect x="492" y="105" width="86" height="52" rx="14" fill="rgba(15,118,110,0.10)" stroke="#0f766e" stroke-width="2"/>
+            <text x="535" y="136" text-anchor="middle" font-weight="700">Sprint</text>
+            <rect x="622" y="105" width="100" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="672" y="136" text-anchor="middle">Increment</text>
+            <rect x="766" y="105" width="110" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="821" y="136" text-anchor="middle">Sprint review</text>
+            <rect x="920" y="105" width="125" height="52" rx="9" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="982" y="136" text-anchor="middle">Retrospective</text>
+          </g>
+          <g stroke="#4a4a58" stroke-width="1.8">
+            <line x1="143" y1="131" x2="167" y2="131" marker-end="url(#sarr)"/>
+            <line x1="287" y1="131" x2="322" y2="131" marker-end="url(#sarr)"/>
+            <line x1="448" y1="131" x2="484" y2="131" marker-end="url(#sarr)"/>
+            <line x1="578" y1="131" x2="614" y2="131" marker-end="url(#sarr)"/>
+            <line x1="722" y1="131" x2="758" y2="131" marker-end="url(#sarr)"/>
+            <line x1="876" y1="131" x2="912" y2="131" marker-end="url(#sarr)"/>
+          </g>
+          <path d="M982 105 v-46 H231 v38" fill="none" stroke="#4a4a58" stroke-width="1.8" marker-end="url(#sarr)"/>
+          <g font-size="11.5" fill="#4a4a58" font-style="italic">
+            <text x="305" y="178" text-anchor="middle">Definition of Ready</text>
+            <text x="596" y="178" text-anchor="middle">Definition of Done</text>
+            <text x="535" y="92" text-anchor="middle">Daily Scrum</text>
+          </g>
+          <g class="scrum-marks">
+            <g><circle cx="389" cy="84" r="14" fill="#15151d"/><text x="389" y="89" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="700">1</text></g>
+            <g><circle cx="600" cy="200" r="14" fill="#15151d"/><text x="600" y="205" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="700">2</text></g>
+            <g><circle cx="821" cy="84" r="14" fill="#15151d"/><text x="821" y="89" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="700">3</text></g>
+            <g><circle cx="982" cy="200" r="14" fill="#15151d"/><text x="982" y="205" text-anchor="middle" font-size="12.5" fill="#ffffff" font-weight="700">4</text></g>
+          </g>
+        </svg>
+        <figcaption>Where probabilistic agents strain the Scrum cycle. Own English schematic, based on our
+        forthcoming HMD article.</figcaption>
+      </figure>
+
+      <div class="cards reveal" style="grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));">
+        <article class="card">
+          <p class="card__venue">Challenge · 1</p>
+          <h3 class="card__title">Backlog items &amp; acceptance criteria</h3>
+          <p class="card__text">How do you write acceptance criteria for output that is probabilistic by design?</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Challenge · 2</p>
+          <h3 class="card__title">Definition of Done</h3>
+          <p class="card__text">When is an agent “done” if the same input can produce different results?</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Challenge · 3</p>
+          <h3 class="card__title">Sprint review</h3>
+          <p class="card__text">Reviewing variable behavior with stakeholders takes evaluation runs, not a single demo.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Challenge · 4</p>
+          <h3 class="card__title">Stability over time</h3>
+          <p class="card__text">Model updates cause drift: a “finished” agent does not stay finished.</p>
+        </article>
+      </div>
+
+      <div class="cards reveal">
+        <article class="card">
+          <p class="card__venue">HMD Praxis der Wirtschaftsinformatik · forthcoming</p>
+          <h3 class="card__title">Agile Development of Generative AI Agents</h3>
+          <p class="card__text">Challenges and hands-on recommendations from five development projects
+          and expert interviews — in German, written for practitioners.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">WI · 2026 &amp; DESRIST · 2026</p>
+          <h3 class="card__title">Let the Agents Close the Loop / PRIME-GEN.ai</h3>
+          <p class="card__text">Where this leads: a GenAI-based multi-agent prototype for business
+          process improvement — live-demoed at DESRIST, to be presented at WI in Linz.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICE: AWA ============ -->
+  <section class="band" id="practice">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">From lab to practice</p>
+      <h2 class="band__title reveal">Agentic Work Automation (AWA)</h2>
+      <p class="reveal">Generative AI opens new ways to automate complex knowledge work. GenAI-based
+      <strong>multi-agent systems</strong> go a step further: several specialized agents work together,
+      coordinate tasks, and support people in complex processes. In the
+      <a href="https://www.wi.fit.fraunhofer.de/de/projekte/oeffentliche-projekte/Agentic-Work-Automation.html">AWA
+      research project</a> at the Fraunhofer FIT Institute Branch Information Systems, where I co-lead a
+      research group, we develop and test such systems along concrete industry use cases.</p>
+      <figure class="figure reveal">
+        <img src="../../assets/awa-architecture.svg" loading="lazy" width="1000" height="505"
+             alt="Schematic: a workflow step is handled by a multi-agent system of coordinated agents connected to external data sources and tools; each agent perceives, remembers, and acts on top of a foundation model, embedded in the enterprise environment">
+        <figcaption>How a GenAI-based multi-agent system is embedded in an organization. Own schematic,
+        based on the AWA project (Fraunhofer&nbsp;FIT).</figcaption>
+      </figure>
+      <p class="reveal">The project distills scientific and practical guidance along three phases —
+      published as compact <strong>“Knowledge Nuggets”</strong> for practitioners:</p>
+      <ol class="phases reveal">
+        <li><strong>Define</strong> — goals, requirements, and use cases for GenAI-based multi-agent systems</li>
+        <li><strong>Build</strong> — architecture and implementation</li>
+        <li><strong>Run</strong> — steering, quality, and traceability</li>
+      </ol>
+      <div class="cards cards--three reveal">
+        <article class="card">
+          <p class="card__venue">Knowledge Nugget · 01</p>
+          <h3 class="card__title">Chatbots, Agents, Multi-Agent Systems</h3>
+          <p class="card__text">What AI agents and multi-agent systems actually are — a map of the terrain.</p>
+          <a class="card__link" href="https://www.wi.fit.fraunhofer.de/content/dam/fit/witschaftsinformatik/dokumente/01_AWA_Chatbot-Agents-MAS.pdf">Read the nugget (PDF, German) →</a>
+        </article>
+        <article class="card">
+          <p class="card__venue">Knowledge Nugget · 02</p>
+          <h3 class="card__title">When a Multi-Agent System Makes Sense</h3>
+          <p class="card__text">Multi-agent vs. single-agent: a decision guide for real-world automation.</p>
+          <a class="card__link" href="https://www.wi.fit.fraunhofer.de/content/dam/fit/witschaftsinformatik/dokumente/Wann-ein-Multi-Agenten-System-sinnvoll-ist.pdf">Read the nugget (PDF, German) →</a>
+        </article>
+        <article class="card">
+          <p class="card__venue">Knowledge Nugget · 03</p>
+          <h3 class="card__title">Agile Development of GenAI Agents</h3>
+          <p class="card__text">Probabilistic agents break Scrum's assumptions — companion to our HMD
+          article. <em>Coming soon.</em></p>
+        </article>
+      </div>
+      <p class="band__note reveal">Project partners: Fraunhofer FIT, Ancud IT-Beratung, DATEV, soffico,
+      and Brauerei Gebr. Maisel, plus associated partners.</p>
+
+      <h3 class="band__subtitle reveal">Finding the right use cases first</h3>
+      <p class="reveal">Before any agent is built, organizations face a selection problem. In our industry
+      projects — from manufacturing to knowledge work — we run gallery walks and ideation formats, then
+      condense ideas into one-page profiles for structured evaluation. The funnel is steep:</p>
+      <div class="funnel reveal" aria-label="Use case funnel: from about 300 raw ideas to about 100 worth detailing to 20 to 30 implemented">
+        <div class="funnel__stage">
+          <div class="funnel__bar" style="--w: 100%"></div>
+          <span class="funnel__num">~300</span>
+          <span class="funnel__label">raw ideas from ideation &amp; gallery walks</span>
+        </div>
+        <div class="funnel__stage">
+          <div class="funnel__bar" style="--w: 46%"></div>
+          <span class="funnel__num">~100</span>
+          <span class="funnel__label">worth detailing in one-page profiles</span>
+        </div>
+        <div class="funnel__stage">
+          <div class="funnel__bar" style="--w: 16%"></div>
+          <span class="funnel__num">20–30</span>
+          <span class="funnel__label">make it onto the implementation roadmap</span>
+        </div>
+      </div>
+      <p class="band__note reveal">Typical proportions from our projects — the exact shape depends on the
+      organization's AI maturity.</p>
+      <p class="band__cta reveal">Interested in talks, joint projects, or applied research on AI agents?
+        <a href="../../#about">Get in touch.</a></p>
+    </div>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section class="band band--alt" id="teaching">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">Teaching</p>
+      <h2 class="band__title reveal">Teaching the builders</h2>
+      <p class="reveal">The same design thinking flows into my courses at Esslingen University — from
+      architecting AI solutions to understanding the processes they automate.</p>
+      <div class="cards reveal">
+        <article class="card">
+          <p class="card__venue">Lecture</p>
+          <h3 class="card__title">Solution Architecture</h3>
+          <p class="card__text">A semester-long arc from AI and Python fundamentals through generative and
+          agentic AI to architecture principles and hands-on prototyping: student teams identify AI use
+          cases, pitch them, and build them — vibe coding included.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Lecture</p>
+          <h3 class="card__title">Business Processes 1</h3>
+          <p class="card__text">From process modeling to process mining: understanding and improving how
+          work actually flows — the foundation for deciding what agents should automate.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTINUE ============ -->
+  <section class="band" id="continue">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">Continue exploring</p>
+      <h2 class="band__title reveal">This is one of several stories</h2>
+      <p class="reveal">Where do the agents' judgments come from — and can they be trusted? That question
+      has its own story. The full publication list, my roles, and contact live on the main page.</p>
+      <p class="band__cta reveal"><a href="../crowds-to-agents/">Story 01: From Crowds to Agents</a> ·
+        <a href="../../#stories">All stories</a> ·
+        <a href="../../#publications">Publications</a> ·
+        <a href="../../#about">Get in touch</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Manfred Schoch · This site sets no cookies and uses no tracking.</p>
+    <p><a href="../../impressum.html">Impressum</a> · <a href="../../datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script src="../../js/shared.js"></script>
+<script src="../../js/story-agentic.js"></script>
+</body>
+</html>
