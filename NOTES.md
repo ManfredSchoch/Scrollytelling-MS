@@ -23,8 +23,11 @@
 - **`content/landing.md` und `content/story-*.md` sind die Single Source of Truth
   für alle Website-Texte.** Dort direkt editieren (auch im GitHub-Web-Editor), dann
   "sync content" sagen — Claude überträgt die Änderungen ins HTML.
-- Phasenstatus: Phase 1 (Hub + Story 1) umgesetzt. Phase 2 (Story 2, Input liegt in
-  `content/plans/story-agentic-enterprise.md`) und Phase 3 (Story 3) offen.
+- Phasenstatus: Phase 1 (Hub + Story 1) und Phase 2 (Story 2 "Agentic Enterprise")
+  umgesetzt. Phase 3 (Story 3 "Digital Work") offen; PRIME-GEN.ai als Story-Kandidat.
+- Story-2-Prüfpunkte: Challenge-3-Formulierung (Sprint Review) gegen das HMD-Paper
+  prüfen; Kursbeschreibung "Business Processes 1" verifizieren; Spektrum-Band-Texte
+  (js/story-agentic.js, BANDS) sind eigene Zuspitzungen — gegen HICSS-Paper lesen.
 
 ## Zur Prüfung geflaggt (Urheberrecht / Freigaben)
 - **Porträtfoto** (`assets/portrait.jpg`): Nutzung vom Eigentümer freigegeben (14.07.2026).
