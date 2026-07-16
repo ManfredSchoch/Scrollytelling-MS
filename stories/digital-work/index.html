@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Human Side of Digital Work — Manfred Schoch</title>
+<meta name="description" content="How organizations bring digital technology and AI to their whole workforce: reading digital trace data to understand behaviour over time, what digital work costs people, and interventions that take their difficulties seriously.">
+<meta property="og:title" content="The Human Side of Digital Work — Manfred Schoch">
+<meta property="og:description" content="Not everyone adopts technology the same way. A research story on behaviour over time, the human cost of digital work, and the support that helps.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://manfredschoch.github.io/Scrollytelling-MS/stories/digital-work/">
+<meta property="og:image" content="https://manfredschoch.github.io/Scrollytelling-MS/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="story-human">
+
+<header class="site-header">
+  <a class="site-header__name" href="../../">← Manfred Schoch</a>
+  <nav class="site-header__nav">
+    <a href="#act-1">The story</a>
+    <a href="#practice">Practice</a>
+    <a href="#teaching">Teaching</a>
+    <a href="../../#publications">Publications</a>
+    <a href="../../#stories">All stories</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ OPENING SCROLLYTELLING ============ -->
+  <section class="scrolly" id="story" aria-label="Introduction">
+    <div class="scrolly__stage">
+      <svg class="scrolly__canvas" id="trace-canvas" viewBox="0 0 800 600" role="img"
+           aria-label="Animation of scattered digital-trace dots reorganizing into three distinct behavioural trajectories along a shared timeline: different people follow different paths of technology use over time"></svg>
+      <div class="scrolly__eyebrow">A research story · Manfred Schoch</div>
+      <div class="scrolly__blurbs">
+        <div class="scrolly__blurb" data-step="0">
+          <p>Every login, message, and click at work leaves a digital trace.</p>
+        </div>
+        <div class="scrolly__blurb" data-step="1">
+          <p>Behind those traces are people — and no two adopt technology the same way.</p>
+        </div>
+        <div class="scrolly__blurb" data-step="2">
+          <p>The real test isn't how fast we roll out tools — it's <strong>how we bring the whole workforce along.</strong></p>
+        </div>
+      </div>
+      <div class="scrolly__hint" aria-hidden="true">Scroll ↓</div>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section class="intro" id="research">
+    <div class="wrap">
+      <p class="intro__lede reveal">Bringing new technology into an organization is rarely just a technical
+      problem — it is a human one. My research reads the digital traces people leave to understand how
+      different groups actually adopt, struggle with, and adapt to digital work — from everyday workplace
+      tools to AI agents — and what organizations can do to bring everyone along.</p>
+    </div>
+  </section>
+
+  <!-- ============ ACT 1 ============ -->
+  <section class="chapter" id="act-1">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 1 · How people actually use technology</p>
+        <h2 class="chapter__title">No two people use tech the <span class="oval">same</span></h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">Using digital trace data — the anonymized logs of everyday tool use — we studied how
+      different types of employees used digital communication and collaboration over time. People don't move
+      in lockstep: some are intensive power users, others adopt slowly, and a sudden external shock can push
+      each group in a different direction.</p>
+
+      <div class="dataviz reveal" aria-label="Divergent adaptation of two employee groups after an external shock">
+        <div class="dataviz__side">
+          <h3 class="dataviz__title">Same shock, opposite moves</h3>
+          <p>Between two observation periods, an <strong>external shock</strong> hit — the sudden shift to
+          remote work. It didn't move everyone the same way.</p>
+          <p>Groups that had used few digital channels — much of the administrative staff — <strong>broadened
+          their tool use</strong>. Groups that were already intensive users — parts of middle management —
+          <strong>narrowed the variety of channels</strong> they relied on. New situations reshape habits,
+          but not uniformly.</p>
+        </div>
+        <figure class="dataviz__chart">
+          <svg viewBox="0 0 640 320" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+               aria-label="Slope chart across two periods T3 and T4, separated by an external shock: administrative staff broaden their tool use while middle management narrows its channel variety">
+            <line x1="70" y1="40" x2="70" y2="270" stroke="#c9c9dc" stroke-width="1.4"/>
+            <line x1="70" y1="270" x2="520" y2="270" stroke="#c9c9dc" stroke-width="1.4"/>
+            <text x="60" y="52" text-anchor="end" font-size="12" fill="#8f8fa3">high</text>
+            <text x="60" y="266" text-anchor="end" font-size="12" fill="#8f8fa3">low</text>
+            <text x="150" y="292" text-anchor="middle" font-size="13" fill="#4a4a58">before (T3)</text>
+            <text x="430" y="292" text-anchor="middle" font-size="13" fill="#4a4a58">after (T4)</text>
+            <!-- external shock -->
+            <line x1="290" y1="46" x2="290" y2="270" stroke="#9333ea" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.7"/>
+            <text x="290" y="36" text-anchor="middle" font-size="11.5" fill="#9333ea" font-style="italic">external shock</text>
+            <!-- administrative staff: broaden use (rises) -->
+            <polyline points="150,232 430,120" fill="none" stroke="#8b6fc4" stroke-width="3"/>
+            <circle cx="150" cy="232" r="5" fill="#8b6fc4"/><circle cx="430" cy="120" r="5" fill="#8b6fc4"/>
+            <text x="446" y="118" font-size="12.5" fill="#6d4aa6" font-weight="700">Administrative staff</text>
+            <text x="446" y="134" font-size="11.5" fill="#4a4a58">broader tool use ↑</text>
+            <!-- middle management: narrow channels (falls) -->
+            <polyline points="150,96 430,196" fill="none" stroke="#6d4aa6" stroke-width="3"/>
+            <circle cx="150" cy="96" r="5" fill="#6d4aa6"/><circle cx="430" cy="196" r="5" fill="#6d4aa6"/>
+            <text x="150" y="84" text-anchor="middle" font-size="12.5" fill="#6d4aa6" font-weight="700">Middle management</text>
+            <text x="446" y="210" font-size="11.5" fill="#4a4a58">fewer channels ↓</text>
+          </svg>
+          <figcaption>Schematic recreation based on Schoch, Gimpel, Maier &amp; Neumeier (2023,
+          <em>European Journal of Information Systems</em>). Groups and direction of change; levels stylized.</figcaption>
+        </figure>
+      </div>
+
+      <p class="reveal">Zoom out, and the same pattern appears across many studies and many different triggers:
+      technology use is never simply “rolled out and done.” It shifts over time — but only when something
+      prompts it. Each adaptation differs in length and intensity, and then settles into a new steady state.</p>
+
+      <figure class="figure reveal pop-fig">
+        <svg viewBox="0 0 1000 300" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="A rising, stepped curve of routine behaviour over time, split into an adoption phase and a post-adoption phase, with five numbered triggers that each cause a dip and recovery to a new, higher steady state">
+          <line x1="55" y1="60" x2="55" y2="252" stroke="#c9c9dc" stroke-width="1.4"/>
+          <line x1="55" y1="252" x2="950" y2="252" stroke="#c9c9dc" stroke-width="1.4"/>
+          <text x="48" y="70" text-anchor="end" font-size="12" fill="#8f8fa3">high</text>
+          <text x="48" y="250" text-anchor="end" font-size="12" fill="#8f8fa3">low</text>
+          <text x="30" y="160" text-anchor="middle" font-size="12" fill="#4a4a58" transform="rotate(-90 30 160)">routine behaviour</text>
+          <text x="945" y="272" text-anchor="end" font-size="12.5" fill="#4a4a58">time →</text>
+          <!-- phase divider -->
+          <line x1="620" y1="55" x2="620" y2="252" stroke="#9333ea" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.6"/>
+          <text x="330" y="48" text-anchor="middle" font-size="12.5" fill="#4a4a58" font-weight="600">Adoption / initial-use phase</text>
+          <text x="790" y="48" text-anchor="middle" font-size="12.5" fill="#4a4a58" font-weight="600">Post-adoption phase</text>
+          <!-- rising stepped line with dips at triggers -->
+          <polyline points="60,244 92,244 104,252 150,208 244,208 258,217 302,170 400,170 414,180 458,134 560,134 574,143 612,112 700,112 762,112 776,122 818,96 900,93"
+                    fill="none" stroke="#6d4aa6" stroke-width="2.8" stroke-linejoin="round"/>
+          <g class="pop-marks">
+            <g><circle cx="92" cy="222" r="13" fill="#6d4aa6"/><text x="92" y="227" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">1</text></g>
+            <g><circle cx="250" cy="188" r="13" fill="#6d4aa6"/><text x="250" y="193" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">2</text></g>
+            <g><circle cx="406" cy="150" r="13" fill="#6d4aa6"/><text x="406" y="155" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">3</text></g>
+            <g><circle cx="566" cy="114" r="13" fill="#6d4aa6"/><text x="566" y="119" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">4</text></g>
+            <g><circle cx="768" cy="92" r="13" fill="#6d4aa6"/><text x="768" y="97" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">5</text></g>
+          </g>
+        </svg>
+        <figcaption>How technology use settles into new steady states over time. Own schematic. Triggers:
+        1 a new system · 2–4 later IT events · 5 deliberate initiatives &amp; new features.</figcaption>
+      </figure>
+
+      <blockquote class="pullquote reveal">
+        <p>New situations are openings — moments where organizations can actively reshape how technology is used.</p>
+      </blockquote>
+
+      <div class="cards cards--three reveal">
+        <article class="card card--highlight">
+          <p class="card__venue">European Journal of Information Systems · 2023</p>
+          <h3 class="card__title">From Broken Habits to New Intentions</h3>
+          <p class="card__text">How COVID-19 expanded our knowledge of post-adoptive use behaviour of digital
+          communication and collaboration — the study behind this act.</p>
+          <a class="card__link" href="https://doi.org/10.1080/0960085X.2022.2096489">Read the paper →</a>
+        </article>
+        <article class="card">
+          <p class="card__venue">ICIS · 2017 · Seoul</p>
+          <h3 class="card__title">Emergent User Roles of a Digital Workplace</h3>
+          <p class="card__text">A network analysis of workplace trace data: a small set of power users drives
+          the majority of activity — a pattern we now see repeating for AI use.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Current work</p>
+          <h3 class="card__title">Making agent work traceable</h3>
+          <p class="card__text">As organizations adopt agentic AI, the question returns in a new form: how do
+          we keep the decisions and outputs of complex multi-agent systems traceable and accountable? A
+          prototype is in the making.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACT 2 ============ -->
+  <section class="chapter" id="act-2">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 2 · The human cost</p>
+        <h2 class="chapter__title">What digital work <span class="oval">costs</span></h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">The same connectivity that makes us productive can quietly wear people down. Two threads
+      of our research make this concrete: how a constant stream of IT demands adds up to a felt lack of time —
+      and how people's emotions toward technology shift as they get used to it.</p>
+
+      <p class="reveal">Dozens of small frictions — interruptions, notifications, ever-changing tools — rarely
+      register on their own. Together they converge into something people feel acutely: never enough time.
+      And that scarcity radiates outward.</p>
+
+      <div class="timeloss reveal" aria-label="How many IT-related frictions converge into a felt lack of time and radiate into consequences">
+        <div class="timeloss__col timeloss__col--in">
+          <p class="timeloss__head">What piles up</p>
+          <div class="timeloss__cat" style="--i:0"><b>User</b><span>Less training or experience with IT</span></div>
+          <div class="timeloss__cat" style="--i:1"><b>IT system</b><span>Interruptions, addictive features, information overload</span></div>
+          <div class="timeloss__cat" style="--i:2"><b>IT use</b><span>Always-on use, work–life spillover</span></div>
+          <div class="timeloss__cat" style="--i:3"><b>Task</b><span>Back-to-back digital meetings, little control over deadlines</span></div>
+        </div>
+        <div class="timeloss__core">
+          A felt lack of time
+          <small>time pressure · time urgency</small>
+        </div>
+        <div class="timeloss__col timeloss__col--out">
+          <p class="timeloss__head">What it costs</p>
+          <div class="timeloss__cat" style="--i:5"><b>Performance</b><span>Rushed decisions, less focus</span></div>
+          <div class="timeloss__cat" style="--i:6"><b>Wellbeing</b><span>Anxiety and insecurity</span></div>
+          <div class="timeloss__cat" style="--i:7"><b>Social</b><span>Less time for colleagues</span></div>
+          <div class="timeloss__cat" style="--i:8"><b>Technology</b><span>A negative view of IT, narrower use</span></div>
+        </div>
+      </div>
+      <p class="timeloss__flow reveal">Many small demands → one scarce resource → broad fallout. <span aria-hidden="true">Hover a card to lift it.</span></p>
+      <p class="band__note reveal">Antecedents and consequences of an IT-related lack of time. Own schematic
+      based on Schoch &amp; Weinert (2023, <em>Wirtschaftsinformatik</em>).</p>
+
+      <h3 class="band__subtitle reveal">It doesn't only wear people down</h3>
+      <p class="reveal">Adopting technology isn't only strain. Following the same users over time, two emotions
+      move in opposite directions: the sense of <strong>challenge</strong> fades as people find their footing,
+      while a sense of <strong>achievement</strong> grows. And challenge is productive — it is what drives
+      people to adapt how they work.</p>
+
+      <div class="dataviz reveal" aria-label="Two emotions over time: challenge declines while achievement rises">
+        <div class="dataviz__side">
+          <h3 class="dataviz__title">From challenge to mastery</h3>
+          <p>Early on, new technology feels like a <strong>challenge</strong>. Over time that feeling recedes,
+          and a sense of <strong>achievement</strong> takes its place.</p>
+          <p>The challenge phase isn't wasted: it is precisely what pushes people to <strong>adapt how they
+          use the technology</strong>. Give people the room to get there, and strain turns into competence.</p>
+        </div>
+        <figure class="dataviz__chart">
+          <svg viewBox="0 0 560 320" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+               aria-label="Two schematic lines over time: challenge starts high and declines, achievement starts low and rises, crossing in the middle">
+            <line x1="70" y1="40" x2="70" y2="262" stroke="#c9c9dc" stroke-width="1.4"/>
+            <line x1="70" y1="262" x2="520" y2="262" stroke="#c9c9dc" stroke-width="1.4"/>
+            <text x="60" y="52" text-anchor="end" font-size="12" fill="#8f8fa3">high</text>
+            <text x="60" y="258" text-anchor="end" font-size="12" fill="#8f8fa3">low</text>
+            <text x="290" y="286" text-anchor="middle" font-size="12.5" fill="#4a4a58">time using the technology →</text>
+            <!-- challenge: declines -->
+            <polyline points="95,80 500,214" fill="none" stroke="#6b7280" stroke-width="3"/>
+            <circle cx="95" cy="80" r="5" fill="#6b7280"/><circle cx="500" cy="214" r="5" fill="#6b7280"/>
+            <text x="100" y="66" font-size="12.5" fill="#6b7280" font-weight="700">Challenge</text>
+            <!-- achievement: rises -->
+            <polyline points="95,224 500,74" fill="none" stroke="#6d4aa6" stroke-width="3"/>
+            <circle cx="95" cy="224" r="5" fill="#6d4aa6"/><circle cx="500" cy="74" r="5" fill="#6d4aa6"/>
+            <text x="410" y="66" font-size="12.5" fill="#6d4aa6" font-weight="700">Achievement</text>
+          </svg>
+          <figcaption>Schematic recreation based on Jung, Schoch &amp; Weinert (2023,
+          <em>International Conference on Information Systems</em>). Directions of change; levels stylized.</figcaption>
+        </figure>
+      </div>
+
+      <blockquote class="pullquote reveal">
+        <p>Give people time to find their footing, and strain turns into mastery.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ ACT 3 ============ -->
+  <section class="chapter" id="act-3">
+    <div class="chapter__hero">
+      <div class="chapter__hero-inner">
+        <p class="chapter__eyebrow">Act 3 · Designing the support</p>
+        <h2 class="chapter__title">Meeting people where they get <span class="oval">stuck</span></h2>
+      </div>
+    </div>
+    <div class="chapter__body wrap">
+      <p class="reveal">Knowing what digital work does to people is only useful if it changes how we design
+      their support. Three complementary moves: faster help when self-coping stalls, in-the-moment nudges,
+      and building people's own coping skills.</p>
+
+      <figure class="figure reveal routing">
+        <svg viewBox="0 0 900 230" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="A person facing an IT problem tries to cope on their own in a loop; the longer it drags without success, the more frustration builds — so a fast, low-friction path to help is offered">
+          <defs>
+            <marker id="ha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="#4a4a58"/>
+            </marker>
+          </defs>
+          <g font-size="13.5" fill="#15151d">
+            <rect x="20" y="86" width="150" height="58" rx="10" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="95" y="110" text-anchor="middle">A relevant</text>
+            <text x="95" y="128" text-anchor="middle">IT problem</text>
+            <rect x="230" y="86" width="180" height="58" rx="10" fill="rgba(109,74,166,0.08)" stroke="#6d4aa6" stroke-width="1.8"/>
+            <text x="320" y="110" text-anchor="middle">Try to cope</text>
+            <text x="320" y="128" text-anchor="middle">on your own</text>
+            <rect x="470" y="86" width="170" height="58" rx="10" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="555" y="110" text-anchor="middle">The longer it drags,</text>
+            <text x="555" y="128" text-anchor="middle">the more frustration</text>
+            <rect x="700" y="86" width="180" height="58" rx="10" fill="rgba(109,74,166,0.14)" stroke="#6d4aa6" stroke-width="2"/>
+            <text x="790" y="110" text-anchor="middle" font-weight="700">A fast path</text>
+            <text x="790" y="128" text-anchor="middle">to real help</text>
+          </g>
+          <g stroke="#4a4a58" stroke-width="1.8">
+            <line x1="170" y1="115" x2="222" y2="115" marker-end="url(#ha)"/>
+            <line x1="410" y1="115" x2="462" y2="115" marker-end="url(#ha)"/>
+            <line x1="640" y1="115" x2="692" y2="115" marker-end="url(#ha)"/>
+          </g>
+          <!-- self-coping loop arrow above the cope box -->
+          <path d="M300 86 C300 52 340 52 340 86" fill="none" stroke="#6d4aa6" stroke-width="1.8" marker-end="url(#ha)"/>
+          <text x="320" y="44" text-anchor="middle" font-size="11.5" fill="#6d4aa6" font-style="italic">retry, search, work around…</text>
+        </svg>
+        <figcaption>Why fast help matters: people who cope alone too long get frustrated. Own schematic,
+        based on Blaß, Hörold &amp; Schoch (2023, <em>European Conference on Information Systems</em>).</figcaption>
+      </figure>
+
+      <p class="reveal">A second move meets people <em>in the moment</em>. We designed a personalized support
+      app that turns the very source of the problem — notifications — into the channel for helping people
+      regain control of their attention: it surfaces one small, actionable tip at a time, keeps a history,
+      and lets people reflect on their own interruption load.</p>
+
+      <figure class="figure reveal phones">
+        <svg viewBox="0 0 720 380" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="Three schematic phone screens: Home with a single actionable tip and an interruption-load gauge; History listing past tips; Reflection with a chart of interruption load over time and notifications per app">
+          <!-- Phone 1: Home -->
+          <g>
+            <rect x="20" y="20" width="200" height="340" rx="26" fill="#ffffff" stroke="#15151d" stroke-width="2"/>
+            <rect x="20" y="20" width="200" height="46" rx="26" fill="#6d4aa6"/>
+            <rect x="20" y="44" width="200" height="22" fill="#6d4aa6"/>
+            <text x="40" y="49" font-size="13" fill="#fff" font-weight="700">Home</text>
+            <rect x="36" y="82" width="168" height="96" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+            <circle cx="56" cy="104" r="9" fill="#15151d"/><text x="56" y="108" text-anchor="middle" font-size="11" fill="#fff">i</text>
+            <text x="74" y="100" font-size="10.5" fill="#15151d">Turn off message</text>
+            <text x="74" y="114" font-size="10.5" fill="#15151d">preview to cut</text>
+            <text x="74" y="128" font-size="10.5" fill="#15151d">distraction.</text>
+            <text x="50" y="160" font-size="10" fill="#6d4aa6">Samsung · Google · Xiaomi</text>
+            <circle cx="120" cy="262" r="52" fill="none" stroke="#e2dcef" stroke-width="12"/>
+            <path d="M120 210 A52 52 0 0 1 168 246" fill="none" stroke="#6d4aa6" stroke-width="12" stroke-linecap="round"/>
+            <text x="120" y="258" text-anchor="middle" font-size="13" fill="#15151d" font-weight="700">60 / 100</text>
+            <text x="120" y="276" text-anchor="middle" font-size="10" fill="#4a4a58">interruption load</text>
+            <text x="120" y="346" text-anchor="middle" font-size="11" fill="#8f8fa3">Home</text>
+          </g>
+          <!-- Phone 2: History -->
+          <g>
+            <rect x="260" y="20" width="200" height="340" rx="26" fill="#ffffff" stroke="#15151d" stroke-width="2"/>
+            <rect x="260" y="20" width="200" height="46" rx="26" fill="#6d4aa6"/>
+            <rect x="260" y="44" width="200" height="22" fill="#6d4aa6"/>
+            <text x="280" y="49" font-size="13" fill="#fff" font-weight="700">History</text>
+            <g>
+              <rect x="276" y="82" width="168" height="70" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+              <text x="292" y="104" font-size="10.5" fill="#15151d">Deactivate message</text>
+              <text x="292" y="118" font-size="10.5" fill="#15151d">preview on screen</text>
+              <text x="292" y="140" font-size="9.5" fill="#8f8fa3">Fri, Nov 10 · applied</text>
+              <rect x="276" y="164" width="168" height="70" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+              <text x="292" y="186" font-size="10.5" fill="#15151d">Use focus mode to</text>
+              <text x="292" y="200" font-size="10.5" fill="#15151d">avoid leisure pings</text>
+              <text x="292" y="222" font-size="9.5" fill="#8f8fa3">Fri, Nov 10 · skipped</text>
+              <rect x="276" y="246" width="168" height="56" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+              <text x="292" y="268" font-size="10.5" fill="#15151d">Batch email checks</text>
+              <text x="292" y="288" font-size="9.5" fill="#8f8fa3">Thu, Nov 9 · applied</text>
+            </g>
+            <text x="360" y="346" text-anchor="middle" font-size="11" fill="#8f8fa3">History</text>
+          </g>
+          <!-- Phone 3: Reflection -->
+          <g>
+            <rect x="500" y="20" width="200" height="340" rx="26" fill="#ffffff" stroke="#15151d" stroke-width="2"/>
+            <rect x="500" y="20" width="200" height="46" rx="26" fill="#6d4aa6"/>
+            <rect x="500" y="44" width="200" height="22" fill="#6d4aa6"/>
+            <text x="520" y="49" font-size="13" fill="#fff" font-weight="700">Reflection</text>
+            <rect x="516" y="82" width="168" height="104" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+            <text x="530" y="102" font-size="10" fill="#15151d">Interruption load over time</text>
+            <polyline points="530,168 566,150 602,120 638,132 668,150" fill="none" stroke="#6d4aa6" stroke-width="2.4"/>
+            <circle cx="530" cy="168" r="2.6" fill="#6d4aa6"/><circle cx="566" cy="150" r="2.6" fill="#6d4aa6"/>
+            <circle cx="602" cy="120" r="2.6" fill="#6d4aa6"/><circle cx="638" cy="132" r="2.6" fill="#6d4aa6"/>
+            <circle cx="668" cy="150" r="2.6" fill="#6d4aa6"/>
+            <rect x="516" y="198" width="168" height="104" rx="10" fill="#f7f6f2" stroke="#dcd9d0"/>
+            <text x="530" y="218" font-size="10" fill="#15151d">Notifications per app</text>
+            <g font-size="9.5" fill="#4a4a58">
+              <text x="530" y="238">Chat</text><rect x="600" y="230" width="70" height="8" rx="4" fill="#6d4aa6"/>
+              <text x="530" y="258">Email</text><rect x="600" y="250" width="54" height="8" rx="4" fill="#8b6fc4"/>
+              <text x="530" y="278">Calendar</text><rect x="600" y="270" width="34" height="8" rx="4" fill="#b892e6"/>
+            </g>
+            <text x="600" y="346" text-anchor="middle" font-size="11" fill="#8f8fa3">Reflection</text>
+          </g>
+        </svg>
+        <figcaption>“The problem as part of the solution”: a personalized notification support system. Own
+        English schematic, based on Lahmer, Okrusch, Schoch &amp; Gimpel (2024, <em>European Conference on
+        Information Systems</em>).</figcaption>
+      </figure>
+
+      <div class="cards cards--three reveal">
+        <article class="card">
+          <p class="card__venue">ECIS · 2023 · Kristiansand</p>
+          <h3 class="card__title">I Need Help — Now!</h3>
+          <p class="card__text">The role of technical support in coping with IT: when people struggle alone too
+          long, offer faster, lower-friction routes to help.</p>
+        </article>
+        <article class="card card--highlight">
+          <p class="card__venue">ECIS · 2024 · Paphos</p>
+          <h3 class="card__title">When the Problem Becomes the Solution</h3>
+          <p class="card__text">Designing a personalized notification support system that helps people regain
+          control of their attention — one small, actionable step at a time.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Pre-ICIS · SIGHCI</p>
+          <h3 class="card__title">Empowering Users</h3>
+          <p class="card__text">A behavioural-change experiment: a short course that teaches people concrete
+          strategies for coping with IT-related demands — building the skill, not just the tool.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICE ============ -->
+  <section class="band" id="practice">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">From lab to practice</p>
+      <h2 class="band__title reveal">Redesigning the front line of support</h2>
+      <p class="reveal">These ideas shape real projects. With a university IT service desk and the central
+      student-advisory office, we are rethinking how support works: routine, automatable requests — the
+      recurring FAQs — are handled by AI, so human advisors can concentrate on the complex cases and the
+      moments where personal contact really matters.</p>
+
+      <figure class="figure reveal routing">
+        <svg viewBox="0 0 900 250" role="img" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+             aria-label="Incoming support requests are triaged: automatable FAQ-type requests are handled by an AI assistant for instant answers, while complex or personal requests go to human advisors for focused attention">
+          <defs>
+            <marker id="ra" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="#4a4a58"/>
+            </marker>
+          </defs>
+          <g font-size="13.5" fill="#15151d">
+            <rect x="20" y="98" width="150" height="54" rx="10" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="95" y="122" text-anchor="middle">Incoming</text>
+            <text x="95" y="140" text-anchor="middle">requests</text>
+            <path d="M250 125 l40 -28 40 28 -40 28 z" fill="rgba(109,74,166,0.08)" stroke="#6d4aa6" stroke-width="1.8"/>
+            <text x="290" y="129" text-anchor="middle" font-size="12.5">Triage</text>
+            <rect x="420" y="40" width="210" height="54" rx="10" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="525" y="62" text-anchor="middle">Automatable (FAQs)</text>
+            <text x="525" y="80" text-anchor="middle" font-size="12" fill="#6d4aa6" font-weight="700">→ AI assistant</text>
+            <rect x="420" y="156" width="210" height="54" rx="10" fill="#ffffff" stroke="#15151d" stroke-width="1.6"/>
+            <text x="525" y="178" text-anchor="middle">Complex / personal</text>
+            <text x="525" y="196" text-anchor="middle" font-size="12" fill="#6d4aa6" font-weight="700">→ Human advisor</text>
+            <rect x="680" y="40" width="190" height="54" rx="10" fill="rgba(109,74,166,0.10)" stroke="#6d4aa6" stroke-width="1.8"/>
+            <text x="775" y="70" text-anchor="middle">Instant answer</text>
+            <rect x="680" y="156" width="190" height="54" rx="10" fill="rgba(109,74,166,0.10)" stroke="#6d4aa6" stroke-width="1.8"/>
+            <text x="775" y="180" text-anchor="middle">Attention where</text>
+            <text x="775" y="197" text-anchor="middle">it counts</text>
+          </g>
+          <g stroke="#4a4a58" stroke-width="1.8" fill="none">
+            <line x1="170" y1="125" x2="248" y2="125" marker-end="url(#ra)"/>
+            <path d="M330 110 C380 96 388 67 418 67" marker-end="url(#ra)"/>
+            <path d="M330 140 C380 154 388 183 418 183" marker-end="url(#ra)"/>
+            <line x1="630" y1="67" x2="678" y2="67" marker-end="url(#ra)"/>
+            <line x1="630" y1="183" x2="678" y2="183" marker-end="url(#ra)"/>
+          </g>
+        </svg>
+        <figcaption>Own schematic of the redesigned support flow: AI takes the routine load; people handle
+        what needs judgment and a human touch.</figcaption>
+      </figure>
+
+      <h3 class="band__subtitle reveal">Bringing the strategy along</h3>
+      <p class="reveal">Technology only reaches the whole workforce when leadership and strategy come with it.
+      In applied projects and executive training — including a change-management and new-digital-work
+      strategy programme with a large organization — we help leaders shape how digital work is introduced,
+      not just which tools are bought. Our Fraunhofer study <em>New Digital Work</em> distils much of this
+      guidance for practitioners.</p>
+      <p class="band__cta reveal">Interested in talks, change projects, or applied research on digital work?
+        <a href="../../#about">Get in touch.</a></p>
+    </div>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section class="band band--alt" id="teaching">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">Teaching &amp; academic leadership</p>
+      <h2 class="band__title reveal">Teaching digital work</h2>
+      <p class="reveal">The same human-centered lens runs through my teaching and my academic-leadership role —
+      from turning behavioural data into insight to bringing digital transformation to an entire university.</p>
+      <div class="cards reveal">
+        <article class="card">
+          <p class="card__venue">Lecture</p>
+          <h3 class="card__title">Data Analytics</h3>
+          <p class="card__text">From raw behavioural and process data to decisions: how to turn the digital
+          traces of work into insight — the analytical backbone of everything in this story.</p>
+        </article>
+        <article class="card">
+          <p class="card__venue">Academic leadership</p>
+          <h3 class="card__title">Digital transformation in study &amp; teaching</h3>
+          <p class="card__text">As head of the Central Academic Institution for Digital Transformation, I bring
+          digital and AI tools to the whole university — students and staff alike — including the
+          university-wide Cyberweek.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTINUE ============ -->
+  <section class="band" id="continue">
+    <div class="wrap">
+      <p class="band__eyebrow reveal">Continue exploring</p>
+      <h2 class="band__title reveal">This is one of several stories</h2>
+      <p class="reveal">How do AI agents judge and decide — and how do we orchestrate them? Those questions have
+      their own stories. The full publication list, my roles, and contact live on the main page.</p>
+      <p class="band__cta reveal"><a href="../crowds-to-agents/">Story 01: From Crowds to Agents</a> ·
+        <a href="../agentic-enterprise/">Story 02: Orchestrating the Agentic Enterprise</a> ·
+        <a href="../../#publications">Publications</a> ·
+        <a href="../../#about">Get in touch</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Manfred Schoch · This site sets no cookies and uses no tracking.</p>
+    <p><a href="../../impressum.html">Impressum</a> · <a href="../../datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script src="../../js/shared.js"></script>
+<script src="../../js/story-human.js"></script>
+</body>
+</html>
