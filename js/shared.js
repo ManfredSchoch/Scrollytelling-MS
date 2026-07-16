@@ -73,6 +73,17 @@
     });
   });
 
+  /* ---------- Funnel bars (grows bars into view) ---------- */
+  var funnelObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in-view"); funnelObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll(".funnel").forEach(function (el) {
+    if (prefersReduced) { el.classList.add("in-view"); return; }
+    funnelObserver.observe(el);
+  });
+
   /* ---------- Footer year ---------- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
