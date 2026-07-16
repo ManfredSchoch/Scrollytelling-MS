@@ -157,6 +157,16 @@ generate good ideas — and how do organizations judge which ones to pursue?
   to invest — across strategy, processes, IT systems, culture, and structure — on an
   importance–fulfillment matrix (invest, manage excellence, reprioritize).
 
+**Subtitle:** From many ideas to a workable shortlist
+When an organization has more ideas than it can pursue, the evaluation question returns at
+portfolio scale. In our industry projects — from manufacturing to knowledge work — we run
+gallery walks and ideation formats, then condense ideas into one-page profiles for
+structured selection. The funnel is steep:
+**Funnel** (kam von Story 2 hierher): ~300 raw ideas from ideation & gallery walks → ~100
+worth detailing in one-page profiles → 20–30 make it onto the implementation roadmap.
+**Note:** Typical proportions that we see in our projects with organizations at the
+beginning of their GenAI journey — the exact shape depends on the organization's AI maturity.
+
 **CTA:** Interested in ideation formats or applied research? Get in touch.
 
 <!-- AWA ist komplett in Story 2 umgezogen (content/plans/story-agentic-enterprise.md). -->

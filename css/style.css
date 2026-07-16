@@ -274,7 +274,10 @@ a.story-card:hover .card__link { text-decoration: underline; }
 }
 
 /* ============ Story 2: agentic enterprise (teal accent) ============ */
-.story-agentic { --accent: #0f766e; }
+/* Own colour world: deep teal primary + bright teal for emphasis (ovals,
+   eyebrows, opening highlights) — so nothing borrows Story 1's orange. */
+.story-agentic { --accent: #0f766e; --accent-warm: #0d9488; }
+.story-agentic .scrolly__blurb strong { color: #5eead4; }
 .band__subtitle { margin: 3.2rem 0 1rem; font-size: 1.4rem; font-weight: 800; }
 
 .spectrum {

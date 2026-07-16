@@ -8,7 +8,10 @@
   var SVGNS = "http://www.w3.org/2000/svg";
   var TEAL = "#0f766e", TEAL_SOFT = "#3aa99e";
 
-  /* ---------- Opening scrollytelling: rigid pipeline -> agent network ---------- */
+  /* ---------- Opening scrollytelling: rigid pipeline -> delegation hierarchy ----------
+     A strict, numbered process pipeline reorganizes into a top-down orchestration
+     tree: one orchestrator delegates to specialized agents, each wielding its own
+     set of tools. Deliberately distinct from Story 1's peer ring, and teal throughout. */
   var scrolly = document.querySelector(".scrolly");
   var canvas = document.getElementById("pipeline-canvas");
   var blurbs = document.querySelectorAll(".scrolly__blurb");
@@ -21,29 +24,44 @@
     for (var i = 0; i < N; i++) {
       starts.push({ x: 90 + (i / (N - 1)) * (W - 180), y: CY });
     }
-    // end: an agent network (ring of 6 + orchestrator in the middle)
-    var ends = [];
-    for (var h = 0; h < 6; h++) {
-      var a = (Math.PI * 2 * h) / 6 - Math.PI / 2;
-      ends.push({ x: CX + 185 * Math.cos(a), y: CY + 185 * Math.sin(a) });
-    }
-    ends.push({ x: CX, y: CY }); // node 7 becomes the orchestrator
+    // end layout: a delegation hierarchy.
+    //  node 6 -> orchestrator (top center); nodes 0-2 -> agents (middle row);
+    //  nodes 3-5 -> the central tool of each agent (bottom row).
+    var ORCH = { x: CX, y: 118 };
+    var AGENTS = [{ x: 175, y: 322 }, { x: 400, y: 322 }, { x: 625, y: 322 }];
+    var ends = [
+      { x: AGENTS[0].x, y: AGENTS[0].y, r: 15, role: "agent" },
+      { x: AGENTS[1].x, y: AGENTS[1].y, r: 15, role: "agent" },
+      { x: AGENTS[2].x, y: AGENTS[2].y, r: 15, role: "agent" },
+      { x: AGENTS[0].x, y: 498, r: 7, role: "tool" },
+      { x: AGENTS[1].x, y: 502, r: 7, role: "tool" },
+      { x: AGENTS[2].x, y: 498, r: 7, role: "tool" },
+      { x: ORCH.x, y: ORCH.y, r: 22, role: "orch" }
+    ];
+    // extra tool leaves flanking each agent's central tool (static, fade in late)
+    var leaves = [];
+    AGENTS.forEach(function (ag) {
+      leaves.push({ x: ag.x - 56, y: 496, ax: ag.x, ay: ag.y });
+      leaves.push({ x: ag.x + 56, y: 496, ax: ag.x, ay: ag.y });
+    });
 
     // pipeline arrows (fade out with progress)
     var pipeEls = [];
     for (var p = 0; p < N - 1; p++) {
       var ln = document.createElementNS(SVGNS, "line");
       ln.setAttribute("stroke", "#8f8fa3"); ln.setAttribute("stroke-width", "2");
-      ln.setAttribute("marker-end", "");
       canvas.appendChild(ln);
       pipeEls.push(ln);
     }
-    // network links (fade in late): ring + spokes
+    // hierarchy links (fade in late): orchestrator -> agents, agents -> their tools
     var netLinks = [];
-    for (var l = 0; l < 6; l++) {
-      netLinks.push([ends[l], ends[(l + 1) % 6]]);
-      netLinks.push([ends[l], ends[6]]);
-    }
+    AGENTS.forEach(function (ag, k) {
+      netLinks.push([ORCH, ag]);                 // delegation edge
+      netLinks.push([ag, ends[3 + k]]);          // agent -> central tool
+    });
+    leaves.forEach(function (lf) {
+      netLinks.push([{ x: lf.ax, y: lf.ay }, lf]); // agent -> flanking tool
+    });
     var netEls = netLinks.map(function (pair) {
       var line = document.createElementNS(SVGNS, "line");
       line.setAttribute("x1", pair[0].x); line.setAttribute("y1", pair[0].y);
@@ -53,8 +71,17 @@
       canvas.appendChild(line);
       return line;
     });
-    // nodes: each is a group holding a rect (process step) and a circle (agent)
+    // flanking tool leaves (small teal dots that fade in with the hierarchy)
+    var leafEls = leaves.map(function (lf) {
+      var c = document.createElementNS(SVGNS, "circle");
+      c.setAttribute("cx", lf.x); c.setAttribute("cy", lf.y); c.setAttribute("r", "6");
+      c.setAttribute("fill", TEAL_SOFT); c.setAttribute("opacity", "0");
+      canvas.appendChild(c);
+      return c;
+    });
+    // nodes: each is a group holding a rect (process step) and a circle (agent/tool/orchestrator)
     var nodeEls = starts.map(function (s, idx) {
+      var e = ends[idx];
       var g = document.createElementNS(SVGNS, "g");
       var rect = document.createElementNS(SVGNS, "rect");
       rect.setAttribute("x", "-24"); rect.setAttribute("y", "-17");
@@ -68,14 +95,23 @@
       num.setAttribute("text-anchor", "middle"); num.setAttribute("y", "5");
       num.textContent = idx + 1;
       g.appendChild(num);
+      // orchestrator gets an outer ring to read as the conductor
+      var ring = null;
+      if (e.role === "orch") {
+        ring = document.createElementNS(SVGNS, "circle");
+        ring.setAttribute("r", e.r + 7); ring.setAttribute("fill", "none");
+        ring.setAttribute("stroke", TEAL_SOFT); ring.setAttribute("stroke-width", "1.5");
+        ring.setAttribute("opacity", "0");
+        g.appendChild(ring);
+      }
       var c = document.createElementNS(SVGNS, "circle");
-      c.setAttribute("r", idx === N - 1 ? 15 : 11);
-      c.setAttribute("fill", idx === N - 1 ? "#d97e00" : TEAL_SOFT);
+      c.setAttribute("r", e.r);
+      c.setAttribute("fill", e.role === "tool" ? TEAL_SOFT : TEAL);
       c.setAttribute("opacity", "0");
       g.appendChild(c);
       g.setAttribute("transform", "translate(" + s.x + " " + s.y + ")");
       canvas.appendChild(g);
-      return { g: g, rect: rect, num: num, circle: c };
+      return { g: g, rect: rect, num: num, circle: c, ring: ring };
     });
 
     var ease = function (t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
@@ -84,9 +120,8 @@
     function positions(m, t) {
       return starts.map(function (s, idx) {
         var e = ends[idx];
-        var jx = Math.sin(t * 0.6 + idx * 1.7) * 5 * m;
-        var jy = Math.cos(t * 0.5 + idx * 1.3) * 5 * m;
-        return { x: s.x + (e.x - s.x) * m + jx * 0, y: s.y + (e.y - s.y) * m, jx: jx, jy: jy };
+        var jy = Math.cos(t * 0.5 + idx * 1.3) * 4 * m;
+        return { x: s.x + (e.x - s.x) * m, y: s.y + (e.y - s.y) * m + jy };
       });
     }
 
@@ -111,6 +146,7 @@
         n.rect.setAttribute("opacity", (1 - m).toFixed(3));
         n.num.setAttribute("opacity", (1 - m).toFixed(3));
         n.circle.setAttribute("opacity", m.toFixed(3));
+        if (n.ring) n.ring.setAttribute("opacity", (m * 0.8).toFixed(3));
       });
       pipeEls.forEach(function (el, idx) {
         var a = pos[idx], b = pos[idx + 1];
@@ -119,7 +155,8 @@
         el.setAttribute("opacity", (0.9 * (1 - m)).toFixed(3));
       });
       var net = Math.min(Math.max((p - 0.5) / 0.24, 0), 1);
-      netEls.forEach(function (el) { el.setAttribute("opacity", (net * 0.7).toFixed(3)); });
+      netEls.forEach(function (el) { el.setAttribute("opacity", (net * 0.65).toFixed(3)); });
+      leafEls.forEach(function (el) { el.setAttribute("opacity", net.toFixed(3)); });
 
       if (rect.bottom > 0 && rect.top < window.innerHeight && m < 1 && !prefersReduced) {
         requestScrolly();
@@ -130,16 +167,18 @@
     }
 
     if (prefersReduced) {
-      var pos = positions(1, 0);
-      pos.forEach(function (q, idx) {
+      var pos0 = positions(1, 0);
+      pos0.forEach(function (q, idx) {
         var n = nodeEls[idx];
         n.g.setAttribute("transform", "translate(" + q.x + " " + q.y + ")");
         n.rect.setAttribute("opacity", "0");
         n.num.setAttribute("opacity", "0");
         n.circle.setAttribute("opacity", "1");
+        if (n.ring) n.ring.setAttribute("opacity", "0.8");
       });
       pipeEls.forEach(function (el) { el.setAttribute("opacity", "0"); });
-      netEls.forEach(function (el) { el.setAttribute("opacity", "0.7"); });
+      netEls.forEach(function (el) { el.setAttribute("opacity", "0.65"); });
+      leafEls.forEach(function (el) { el.setAttribute("opacity", "1"); });
       blurbs.forEach(function (b) { b.classList.add("is-active"); });
     } else {
       window.addEventListener("scroll", requestScrolly, { passive: true });
@@ -197,17 +236,5 @@
     }
     slider.addEventListener("input", updateSpectrum);
     updateSpectrum();
-  }
-
-  /* ---------- Funnel bars (practice) ---------- */
-  var funnel = document.querySelector(".funnel");
-  if (funnel) {
-    var funnelObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { funnel.classList.add("in-view"); funnelObserver.unobserve(e.target); }
-      });
-    }, { threshold: 0.4 });
-    funnelObserver.observe(funnel);
-    if (prefersReduced) funnel.classList.add("in-view");
   }
 })();

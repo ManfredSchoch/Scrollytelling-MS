@@ -2,7 +2,10 @@
 
 Seite: `stories/agentic-enterprise/index.html`. Akzentfarbe: Teal (#0f766e).
 
-## 1. Opening (Scrollytelling: starre Pipeline → Agenten-Netzwerk)
+## 1. Opening (Scrollytelling: starre Pipeline → Delegations-Hierarchie)
+Endbild bewusst anders als Story 1 (dort Peer-Ring): oben ein Orchestrator, der an
+spezialisierte Agenten delegiert; jeder Agent hat sein eigenes Tool-Set. Durchgehend
+Teal (kein orangener Orchestrator mehr — Orange gehört zu Story 1).
 1. For decades, automating work meant: software does exactly what we specify — *nothing more*.
 2. GenAI agents are different: they plan, delegate, and improvise.
 3. The design question of the decade: **how much autonomy do we grant them — and how do we stay in control?**
@@ -60,14 +63,11 @@ where exactly the friction appears in a Scrum cycle — and what to do about it.
    finished.
 **Paper-Cards:** HMD (forthcoming) · WI 2026 & DESRIST 2026 (PRIME-GEN.ai als Ausblick).
 
-## 6. Practice — AWA (geerbt von der alten Seite) + Use-Case-Funnel
+## 6. Practice — AWA (geerbt von der alten Seite)
 AWA-Beschreibung, Architektur-SVG, Phasen (Define/Build/Run), Nuggets 01–03, Partner.
-**NEU: "Finding the right use cases first":** Before any agent is built, organizations
-face a selection problem. In our industry projects — from manufacturing to knowledge
-work — we run gallery walks and ideation formats, then condense ideas into one-page
-profiles for structured evaluation. The funnel is steep:
-**Funnel:** ~300 raw ideas → ~100 worth detailing in one-page profiles → 20–30 make it
-onto the implementation roadmap. Note: Typical proportions; depends on AI maturity.
+**Kleine Cross-Reference** (Funnel selbst lebt jetzt in Story 1): "Which processes
+should agents take on in the first place? That selection problem … plays out in Story 01,
+where we map the use-case funnel." (Link auf `../crowds-to-agents/#practice`.)
 **CTA:** Talks, joint projects, applied research → Get in touch.
 
 ## 7. Teaching — Teaching the builders
