@@ -28,15 +28,19 @@
 - Story-2-Prüfpunkte: Challenge-3-Formulierung (Sprint Review) gegen das HMD-Paper
   prüfen; Kursbeschreibung "Business Processes 1" verifizieren; Spektrum-Band-Texte
   (js/story-agentic.js, BANDS) sind eigene Zuspitzungen — gegen HICSS-Paper lesen.
-- Story-3-Prüfpunkte:
+- Story-3-Prüfpunkte (nach Umbau 17.07.2026 — Spine "Evolution statt Revolution", AI-forward):
   - Emotions-Twist (challenge↓/achievement↑, challenge→adaptive use) stammt aus der
     Journal-Erweiterung (UNDER REVIEW). Bewusst gezeigt, aber Erweiterung nicht genannt;
     Karte auf publiziertes ICIS-2023-Paper geankert (Freigabe Manfred 16.07.2026).
-  - Alle Akt-Figuren (EJIS-Slope, Adaptationskurve, Time-Poverty, Emotionen, Coping-Loop,
-    LAHMER-Phones, Service-Routing) sind eigene schematische EN-Nachzeichnungen — Levels/
-    Werte stilisiert. Vor Livegang Kernaussagen gegen die Paper gegenlesen.
+  - **Externer AI-Fakt in Akt 1** ("Zugang ist nicht mehr der Unterschied, Adoption schon;
+    wenige Enthusiasten treiben den Großteil der KI-Nutzung") ist bewusst qualitativ (keine
+    erfundene Prozentzahl) — vor Livegang auf Stimmigkeit prüfen/schärfen.
+  - Akt-Figuren (EJIS-Slope, Adaptationskurve, Emotionen, Struggle-Uhr, Service-Routing) sind
+    eigene schematische EN-Nachzeichnungen — Levels stilisiert. Kernaussagen gegenlesen.
   - Agent-Tracing-Ausblick: nur Thema, WIP-Paper NICHT benannt.
   - Awards/Service-Formulierungen (Recognition-Block) auf exakte Schreibweise prüfen.
+  - **Backup:** Time-Poverty-Framework + LAHMER-App liegen in
+    `content/backup/story-digital-work-cuts.md` (bewusst aus der Story entfernt).
 
 ## Zur Prüfung geflaggt (Urheberrecht / Freigaben)
 - **Porträtfoto** (`assets/portrait.jpg`): Nutzung vom Eigentümer freigegeben (14.07.2026).
