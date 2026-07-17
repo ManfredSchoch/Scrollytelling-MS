@@ -51,8 +51,9 @@ Nur noch die Emotions-Kurve (ICIS 2023), positiv gerahmt.
   Ticketsystem (nicht nur konzeptionell) — Tickets werden klassifiziert, FAQs End-to-End von
   KI beantwortet, Menschen für Komplexes/Persönliches. Routing-Schema.
 - **"Bringing the strategy along":** Change-Management & New-Digital-Work-Strategie,
-  Führungskräfte-Training (Organisation NICHT namentlich nennen); Bezug Fraunhofer-Studie
-  "New Digital Work".
+  Führungskräfte-Training (Organisation NICHT namentlich nennen); Fraunhofer-Studie
+  "New Digital Work" (Lanzl, Schoch, Jung & Mayer 2023) als eigene Paper-Kachel darunter.
+  [öffentliche URL von Manfred nachtragen, dann Kachel verlinken]
 
 ## 7. Teaching — Teaching digital work
 - Lecture · Data Analytics · Academic leadership (ZWE, Cyberweek).
