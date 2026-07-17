@@ -6,7 +6,7 @@ wohnt NUR hier (Doppelungs-Regel).
 ## Hero
 **Eyebrow:** Research portfolio · Prof. Dr. Manfred Schoch
 **Titel:** I study how AI agents and humans reshape knowledge work.
-**Sub:** Professor of Information Systems at Esslingen University of Applied Sciences.
+**Sub:** I am Professor of Information Systems at Esslingen University of Applied Sciences.
 My research spans generative AI and multi-agent systems, collective intelligence, and
 the human side of digital work — told here as interactive research stories.
 

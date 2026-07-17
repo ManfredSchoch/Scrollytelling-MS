@@ -47,7 +47,9 @@ Nur noch die Emotions-Kurve (ICIS 2023), positiv gerahmt.
 
 ## 6. Practice — Bringing AI to people, in practice
 - **KI-Schulungen, auf Individuen zugeschnitten** (Rückgriff auf Akt 1) — zuerst.
-- **Service-Desk mit KI:** Routing-Schema (KI für FAQs, Mensch für Komplexes/Persönliches).
+- **Designing an AI-supported help desk** (Unterüberschrift): echte Prozessautomatisierung im
+  Ticketsystem (nicht nur konzeptionell) — Tickets werden klassifiziert, FAQs End-to-End von
+  KI beantwortet, Menschen für Komplexes/Persönliches. Routing-Schema.
 - **"Bringing the strategy along":** Change-Management & New-Digital-Work-Strategie,
   Führungskräfte-Training (Organisation NICHT namentlich nennen); Bezug Fraunhofer-Studie
   "New Digital Work".
